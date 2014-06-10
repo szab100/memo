@@ -1,0 +1,17 @@
+To install Vagrant CentOS ISO:
+
+vagrant box add centos-6 https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box
+
+-------------------------------------
+cd ~/VirtualBox VMs/CentOSTest
+vagrant up && vagrant ssh
+cd /vagrant
+sudo halt
+
+-------------------------------------
+
+To see Mac's Downloads folder from inside VM edit config file
+/Users/<username>/VirtualBox VMs/CentOSTest/Vagrantfile :
+
+config.vm.box = "centos-6"
+config.vm.synced_folder "/Users/<username>/Downloads", "/shared/downloads"
