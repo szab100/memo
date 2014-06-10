@@ -12,4 +12,15 @@ locate is faster than sudo find / -iname "word"
 
  	sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /bin/subl
 
- 	
+-------------------------------------
+
+Homebrew:
+
+brew install <something>
+
+#update brew itself: 
+brew update
+
+#update tools installed with brew:    
+brew upgrade
+brew upgrade <something>
