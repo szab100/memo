@@ -30,3 +30,14 @@ Add firewall exception
 	Ubuntu:		sudo apt-get install iptables-persistent
 			sudo service iptables-persistent start
 			sudo bash -c "iptables-save > /etc/iptables/rules"
+
+-------------------------------------
+ping 8.8.8.8
+traceroute 8.8.8.8
+nslookup 8.8.8.8
+netstat = sudo lsof -i -P
+
+http://whois.arin.net/
+http://www.whatismyip.com/
+
+-------------------------------------
