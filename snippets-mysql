@@ -1,0 +1,11 @@
+MYSQL
+=====
+
+Backup DB to .sql			mysqldump --routines --triggers -u root -p indb > indb.sql
+Restore DB from .sql file		mysql -u root -p indb < indb.sql
+
+Backup DB to gzipped file		mysqldump --routines --triggers -u root -p indb | gzip > indb.sql.gz
+Restore DB from gzipped file		zcat indb.sql.gz | mysql -u root -p
+					zcat indb.sql.gz | sed -e "s/\`indb\`/\`indb_psali\`/" | mysql -u root -p
+
+Backup 1 DB table to gzipped file	mysqldump --routines --triggers -u root -p indb sop | gzip > indb_sop.sql.gz
