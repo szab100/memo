@@ -1,0 +1,5 @@
+ To remove all null's from a collection:
+
+ 	c.removeAll(Collections.singleton(null));
+
+ 	
