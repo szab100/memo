@@ -38,7 +38,7 @@ telnet www.google.com 80
 GET / HTTP/1.1
 
 GET /search?q=telnet HTTP/1.1
-
+host: www.google.com
 
 -------------------------------------
 Testing HTTP over OpenSSL:
