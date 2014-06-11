@@ -32,6 +32,23 @@ Add firewall exception
 			sudo bash -c "iptables-save > /etc/iptables/rules"
 
 -------------------------------------
+Testing HTTP over telnet:
+
+telnet www.google.com 80
+GET / HTTP/1.1
+
+GET /search?q=telnet HTTP/1.1
+
+
+-------------------------------------
+Testing HTTP over OpenSSL:
+
+openssl s_client -connect www.google.com:443
+GET /search?q=openssl HTTP/1.1
+
+
+-------------------------------------
+
 ping 8.8.8.8
 traceroute 8.8.8.8
 nslookup 8.8.8.8
