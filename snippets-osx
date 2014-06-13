@@ -6,9 +6,13 @@ locate -i <file>
 
 locate is faster than sudo find / -iname "word"
 
+To see statistics about the information that locate has cataloged, use the "-S" option:
+
+locate -S
+
 -------------------------------------
 
- To create soft link to Sublime:
+ To create sym link to Sublime:
 
  	sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /bin/subl
 
