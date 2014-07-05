@@ -56,5 +56,6 @@ netstat = sudo lsof -i -P
 
 http://whois.arin.net/
 http://www.whatismyip.com/
+https://dnsleaktest.com/
 
 -------------------------------------
