@@ -2,12 +2,33 @@
 
  	c.removeAll(Collections.singleton(null));
 
- - To add multiple values to already initialized list:
+- To add multiple values to already initialized list:
 
  	list.addAll(Arrays.asList(a, b, c, d, e, f, g));
 
-  - To add multiple values to a not yet initialized list:
+- To add multiple values to a not yet initialized list:
 
  	List<E> list = new ArrayList<E>(Arrays.asList(a, b, c, d, e, f, g));
+
+- To iterate over the keys in a Map:
+
+	for (KeyType key: map.keySet()){
+		System.out.println(key);
+	}
+
+- To iterate over the keys in a Map with an iterator:
+
+	Iterator<KeyType> it = map.keySet().iterator();
+
+	while (it.hasNext()) {
+		System.out.println(it.next());
+	}
+
+- To iterate over key-value pairs in a Map:
+
+	for (Map.Entry<KeyType, ValueType> el: map.entrySet()) {
+		System.out.println(el.getKey() + ": " + el.getValue());
+	}
+
 
  	
