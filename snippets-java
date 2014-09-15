@@ -1,5 +1,13 @@
- To remove all null's from a collection:
+- To remove all null's from a collection:
 
  	c.removeAll(Collections.singleton(null));
+
+ - To add multiple values to already initialized list:
+
+ 	list.addAll(Arrays.asList(a, b, c, d, e, f, g));
+
+  - To add multiple values to a not yet initialized list:
+
+ 	List<E> list = new ArrayList<E>(Arrays.asList(a, b, c, d, e, f, g));
 
  	
