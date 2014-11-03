@@ -30,5 +30,12 @@
 		System.out.println(el.getKey() + ": " + el.getValue());
 	}
 
+- String concatenation:
+
+a += b is the equivalent of
+a = new StringBuilder().append(a).append(b).toString();
+
+
+
 
  	
