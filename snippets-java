@@ -40,22 +40,22 @@
 	Collections.sort(keys);
 	Map<K,V> sortedMap = new LinkedHashMap<K,V>();
 	for(K key: keys){
-    	sortedMap.put(key, map.get(key));
-    }
+		sortedMap.put(key, map.get(key));
+	}
 
 - To sort Map by Values:
 
 	List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K,V>>(map.entrySet());
 	Collections.sort(entries, new Comparator<Map.Entry<K,V>>() {
 		@Override
-    	public int compare(Entry<K, V> o1, Entry<K, V> o2) {
-    		return o1.getValue().compareTo(o2.getValue());
-    	}
-    });
-    Map<K,V> sortedMap = new LinkedHashMap<K,V>();
-    for(Map.Entry<K,V> entry: entries){
-    	sortedMap.put(entry.getKey(), entry.getValue());
-    }
+		public int compare(Entry<K, V> o1, Entry<K, V> o2) {
+			return o1.getValue().compareTo(o2.getValue());
+		}
+	});
+	Map<K,V> sortedMap = new LinkedHashMap<K,V>();
+	for(Map.Entry<K,V> entry: entries){
+		sortedMap.put(entry.getKey(), entry.getValue());
+	}
 
 - String concatenation:
 
