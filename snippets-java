@@ -66,7 +66,9 @@
 
 	Method Overloading: method with same name co-exists in same class, but they must have different method signatures. Resolved using static binding at compile time.
 
-	Method Overriding: method with same name is declared in derived class or sub-class. Resolved using dynamic binding at runtime.
+	Method Overriding: method with same name and same signature is declared in derived class or sub-class. Resolved using dynamic binding at runtime. Examples: equals(), hashCode(), compareTo(). Cannot override static methods (main(), for example) because they are associated with Class rather than object, and resolved and bonded during compile time. Also, private and final methods cannot be overridden. Good practice is to use @Override annotation.
+
+
 
 
 
