@@ -59,8 +59,16 @@
 
 - String concatenation:
 
-a += b is the equivalent of
-a = new StringBuilder().append(a).append(b).toString();
+	a += b is the equivalent of
+	a = new StringBuilder().append(a).append(b).toString();
+
+- Method Overloading vs. Overriding:
+
+	Method Overloading: method with same name co-exists in same class, but they must have different method signatures. Resolved using static binding at compile time.
+
+	Method Overriding: method with same name is declared in derived class or sub-class. Resolved using dynamic binding at runtime.
+
+
 
 
 
