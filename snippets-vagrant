@@ -20,6 +20,8 @@ vagrant init
 Edit /Users/<username>/VirtualBox VMs/CentOSTest/Vagrantfile :
 config.vm.box = "centos-66"
 
+yum update
+
 -------------------------------------
 
 To run VM:
