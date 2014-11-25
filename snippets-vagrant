@@ -17,6 +17,8 @@ mkdir CentOSTest
 cd CentOSTest
 vagrant init
 
+Edit /Users/<username>/VirtualBox VMs/CentOSTest/Vagrantfile :
+config.vm.box = "centos-66"
 
 -------------------------------------
 
@@ -32,5 +34,4 @@ sudo halt
 To see Mac's Downloads folder from inside VM edit config file
 /Users/<username>/VirtualBox VMs/CentOSTest/Vagrantfile :
 
-config.vm.box = "centos-6"
 config.vm.synced_folder "/Users/<username>/Downloads", "/shared/downloads"
