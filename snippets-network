@@ -1,11 +1,11 @@
 NETWORK
 =======
 
-Find FQDN (DNS?)			cat /etc/hosts
-Network usage by port, avg		iftop -B
-Network usage by exe			nethogs
-Find network interface speed		dmesg | grep -i "is Up"
-Network ports open by program (OSX)	sudo lsof -i
+Find FQDN (DNS?):			cat /etc/hosts
+Network usage by port, avg:		iftop -B
+Network usage by exe:			nethogs
+Find network interface speed:		dmesg | grep -i "is Up"
+Network ports open by program (OSX):	sudo lsof -i
 
 SSH port forward (server to client)	ssh user@host -L 3306:localhost:3306
 SSH X-11 forwarding setup for CentOS server
@@ -49,10 +49,17 @@ GET /search?q=openssl HTTP/1.1
 
 -------------------------------------
 
+ifconfig
 ping 8.8.8.8
 traceroute 8.8.8.8
-nslookup 8.8.8.8
-netstat = sudo lsof -i -P
+nslookup google.com
+netstat (on OSX:  sudo lsof -i -P)
+netstat -an | grep LISTEN
+netstat -r
+hostname
+
+
+-------------------------------------
 
 http://whois.arin.net/
 http://www.whatismyip.com/
