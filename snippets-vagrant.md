@@ -1,4 +1,4 @@
-###### To install Vagrant CentOS ISO:
+##### To install Vagrant CentOS ISO:
 
 - CentOS 6.5:
 
@@ -14,7 +14,7 @@ vagrant box add box-cutter/centos66
 
 ---
 
-###### To create VM:
+##### To create VM:
 
 ```
 cd ~/VirtualBox VMs/
@@ -33,7 +33,7 @@ yum install nano
 
 ---
 
-###### To run VM:
+##### To run VM:
 
 ```
 vagrant up && vagrant ssh
@@ -44,7 +44,7 @@ sudo halt
 
 ---
 
-###### To see Mac's Downloads folder from inside VM:
+##### To see Mac's Downloads folder from inside VM:
 
 Edit config file `/Users/<username>/VirtualBox VMs/CentOSTest/Vagrantfile` :
 
