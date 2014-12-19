@@ -63,15 +63,15 @@ https://dnsleaktest.com/
 
 	- Edit `/etc/ssh/sshd_config`: enable "X11Forwarding"
 	
-	- ```
+	```
 	yum install xorg-x11-xauth dbus-x11 liberation-*-fonts gnome-icon-theme
 	```
-	
+
 - SSH X-11 forwarding setup for Ubuntu server:
 
 	- Edit `/etc/ssh/sshd_config` : enable "X11Forwarding"
 	
-	- ```
+	```
 	apt-get install xbase-clients gnome-icon-theme
 	```
 
