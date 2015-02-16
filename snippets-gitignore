@@ -26,6 +26,16 @@ tmp/
 ### Office ###
 ~*
 
-### Mou ###
+### IntelliJ ###
 .idea*
 
+### node.js ###
+node_modules
+build/Release
+.lock-wscript
+.grunt
+
+### Runtime data ###
+pids
+*.pid
+*.seed

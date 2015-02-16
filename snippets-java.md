@@ -1,24 +1,24 @@
 - To remove all null's from a collection:
 
-```
+```java
  	c.removeAll(Collections.singleton(null));
 ```
 
 - To add multiple values to already initialized list:
 
-```
+```java
  	list.addAll(Arrays.asList(a, b, c, d, e, f, g));
 ```
 
 - To add multiple values to a not yet initialized list:
 
-```
- 	List<E> list = new ArrayList<E>(Arrays.asList(a, b, c, d, e, f, g));
+```java 	
+	List<E> list = new ArrayList<E>(Arrays.asList(a, b, c, d, e, f, g));
 ```
 
 - To iterate over the keys in a Map:
 
-```
+```java
 	for (KeyType key: map.keySet()){
 		System.out.println(key);
 	}
@@ -26,9 +26,8 @@
 
 - To iterate over the keys in a Map with an iterator:
 
-```
+```java
 	Iterator<KeyType> it = map.keySet().iterator();
-
 	while (it.hasNext()) {
 		System.out.println(it.next());
 	}
@@ -36,7 +35,7 @@
 
 - To iterate over key-value pairs in a Map:
 
-```
+```java
 	for (Map.Entry<KeyType, ValueType> el: map.entrySet()) {
 		System.out.println(el.getKey() + ": " + el.getValue());
 	}
@@ -44,13 +43,13 @@
 
 - To sort Map by Keys (using TreeMap, which is slower than HashMap because it runs sorting operation with each insertion, update and removal):
 
-```
+```java
 	Map<K,V> sortedMap = new TreeMap<K,V>(map);
 ```
 
 - To sort Map by Keys (LinkedHashMap will keep the keys in the order they are inserted):
 
-```
+```java
 	List<K> keys = new ArrayList<K>(map.keySet());
 	Collections.sort(keys);
 	Map<K,V> sortedMap = new LinkedHashMap<K,V>();
@@ -61,7 +60,7 @@
 
 - To sort Map by Values:
 
-```
+```java
 	List<Map.Entry<K,V>> entries = new LinkedList<Map.Entry<K,V>>(map.entrySet());
 	Collections.sort(entries, new Comparator<Map.Entry<K,V>>() {
 		@Override
@@ -77,7 +76,7 @@
 
 - String concatenation:
 
-```
+```java
 	a += b is the equivalent of
 	a = new StringBuilder().append(a).append(b).toString();
 ```
