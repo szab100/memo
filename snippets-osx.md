@@ -59,15 +59,21 @@ sudo ifconfig awdl0 up
 
 ---
 
-##### pbcopy
+##### To copy/paste from the OS X clipboard:
 
-To pipe the output of the command directly to the OS X clipboard, use `pbcopy` (pasteboard copy) command, i.e.:
+- pbcopy (pasteboard copy)
+
+To pipe the output of the command to the OS X clipboard:
 
 ```
 ls | pbcopy
 ```
 
+- pbpaste (pasteboard paste)
 
+```
+pbpaste > file.txt
+```
 
 
 
