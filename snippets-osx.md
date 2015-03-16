@@ -57,4 +57,19 @@ And vice versa to restore AirDrop and AWDL (and the WiFi issues):
 sudo ifconfig awdl0 up
 ```
 
+---
+
+##### pbcopy
+
+To pipe the output of the command directly to the OS X clipboard, use `pbcopy` (pasteboard copy) command, i.e.:
+
+```
+ls | pbcopy
+```
+
+
+
+
+
+
 
