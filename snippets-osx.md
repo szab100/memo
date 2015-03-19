@@ -75,6 +75,15 @@ ls | pbcopy
 pbpaste > file.txt
 ```
 
+- To escape spaces properly in the directory path:
+
+```
+pwd | pbcopy
+cd "`pbpaste`"
+```
+
+
+
 
 
 
