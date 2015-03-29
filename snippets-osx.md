@@ -7,6 +7,7 @@ sudo /usr/libexec/locate.updatedb
 locate -i <file>
 (-i flag for case-insensitive search)
 ```
+
 - locate is faster than `sudo find / -iname "word"`
 
 - To see statistics about the information that locate has cataloged, use the "-S" option:
@@ -19,7 +20,9 @@ locate -S
 
 ##### To create sym link to Sublime:
 
- 	sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /bin/subl
+```
+sudo ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /bin/subl
+```
 
 ---
 
@@ -41,3 +44,47 @@ brew upgrade <something>
 ```
 
 ---
+
+##### To disable AWDL and AirDrop to fix Yosemite WiFi issues:
+
+```
+sudo ifconfig awdl0 down
+```
+
+And vice versa to restore AirDrop and AWDL (and the WiFi issues):
+
+```
+sudo ifconfig awdl0 up
+```
+
+---
+
+##### To copy/paste from the OS X clipboard:
+
+- pbcopy (pasteboard copy)
+
+To pipe the output of the command to the OS X clipboard:
+
+```
+ls | pbcopy
+```
+
+- pbpaste (pasteboard paste)
+
+```
+pbpaste > file.txt
+```
+
+- To escape spaces properly in the directory path:
+
+```
+pwd | pbcopy
+cd "`pbpaste`"
+```
+
+
+
+
+
+
+
