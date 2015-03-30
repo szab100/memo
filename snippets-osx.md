@@ -43,6 +43,12 @@ brew upgrade
 brew upgrade <something>
 ```
 
+- install the GNU version of sed called gsed (Mac's sed is BSD based):
+
+```
+brew install gnu-sed
+```
+
 ---
 
 ##### To disable AWDL and AirDrop to fix Yosemite WiFi issues:
@@ -80,6 +86,10 @@ pbpaste > file.txt
 ```
 pwd | pbcopy
 cd "`pbpaste`"
+```
+or
+```
+cd "$(pbpaste)"
 ```
 
 
