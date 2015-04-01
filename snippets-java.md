@@ -92,6 +92,13 @@ The successor of a string s in String's natural ordering is `s + "\0"`, which is
 ```
 The code above will output: [aaa, included]  
 
+- SortedSet Endpoint Operations:
+
+To go one element backward from a specified interior object `obj` in a sorted set:
+
+```java
+Object predecessor = sortedSet.headSet(obj).last();
+```
 
 - Method Overloading vs. Overriding:
 	- Method **Overloading**: method with same name co-exists in same class, but they must have different method signatures. Resolved using static binding at compile time.
