@@ -9,12 +9,12 @@ Pressing <kbd>⌘</kbd> + <kbd>O</kbd> again shows the inherited members of the 
 Go to a supertype/subtype.  
 Pressing <kbd>⌘</kbd> + <kbd>T</kbd> again toggles between supertypes and subtypes.
 
-- <kbd>fn</kbd> <kbd>F3</kbd>   
+- <kbd>fn</kbd> + <kbd>F3</kbd>   
 Open type declaration.  
 Alternatively, hold down <kbd>⌘</kbd> and click the hyperlinked member.
 
-- <kbd>fn</kbd> <kbd>F4</kbd>  
-Open type hierachy of the current class.
+- <kbd>fn</kbd> + <kbd>F4</kbd>  
+Open type hierachy of the current/selected class.
 
 ---
 

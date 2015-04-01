@@ -81,6 +81,18 @@
 	a = new StringBuilder().append(a).append(b).toString();
 ```
 
+- String's natural ordering:
+
+The successor of a string s in String's natural ordering is `s + "\0"`, which is s with a null character appended.
+
+```java
+	String[] wordArray = {"included", "j", "aaa"};
+	SortedSet<String> dictionary = new TreeSet<String>(Arrays.asList(wordArray));
+	System.out.println(dictionary.subSet("a", "included\0"));
+```
+The code above will output: [aaa, included]  
+
+
 - Method Overloading vs. Overriding:
 	- Method **Overloading**: method with same name co-exists in same class, but they must have different method signatures. Resolved using static binding at compile time.
 	
@@ -88,10 +100,6 @@
 	
 		Examples: `equals(), hashCode(), compareTo()`. 
 		Cannot override static methods (`main()`, for example) because they are associated with Class rather than Object, and resolved and bonded during compile time. Also, private and final methods cannot be overridden. Good practice is to use `@Override` annotation.
-
-
-
-
 
 
 
