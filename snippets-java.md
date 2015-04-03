@@ -16,6 +16,16 @@
 	List<E> list = new ArrayList<E>(Arrays.asList(a, b, c, d, e, f, g));
 ```
 
+- To modify a List during iteration with ListIterator (unlike ListIterator, Iterator allows you to delete elements, but not to replace an existing element or to add a new one):
+
+```
+	List<String> list = Arrays.asList(" a ", " b ", " c ");
+	ListIterator<String> it = list.listIterator();
+	while (it.hasNext()) {
+		it.set(it.next().trim());
+	}
+```
+
 - To iterate over the keys in a Map:
 
 ```java
