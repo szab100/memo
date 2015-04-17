@@ -93,14 +93,14 @@
 
 - String's natural ordering:
 
-The successor of a string s in String's natural ordering is `s + "\0"`, which is s with a null character appended.
+The successor of a string s in String's natural ordering is `s + "\0"`, which is `s` with a null character appended.
 
 ```java
 	String[] wordArray = {"included", "j", "aaa"};
 	SortedSet<String> dictionary = new TreeSet<String>(Arrays.asList(wordArray));
 	System.out.println(dictionary.subSet("a", "included\0"));
 ```
-The code above will output: [aaa, included]  
+The code above will output: [aaa, included]
 
 - SortedSet Endpoint Operations:
 
