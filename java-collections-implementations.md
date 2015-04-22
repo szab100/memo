@@ -1,7 +1,7 @@
-###Java Collections Framework implementations.
+###Java Collections Framework implementations
 ---
 
-**Set Implementations**
+####Set Implementations
 
 There are 3 general-purpose `Set` implementations: 
 
@@ -36,37 +36,48 @@ Note: h is the HashSet capacity (number of buckets in a HashMap that's backing i
 
 ---
 
-**List Implementations**
+####List Implementations
 
 There are 2 general-purpose `List` implementations: 
 
 - **ArrayList**
 	- implemented as a resizable array
-	- fast constant-time positional access
+	- fast constant-time positional access `get(int index)`, whereas `LinkedList` requires iterating through the nodes in O(n)
+	- if more elements than the capacity of the underlying array are added, a new array (1.5 times the size) is allocated, and the old array is copied to the new one, resulting in O(n)
 - **LinkedList**
 	- implemented as a doubly-linked list
-	- allocates a node object for each element in the list
-	- also implements the `Queue` interface
-	- has 7 options operations(`clone`, `addFirst`, `getFirst`, `removeFirst`, `addLast`, `getLast`, `removeLast`)
-	- main benefits: Iterator.remove() and ListIterator.add(E element) are constant runtime (O(1))
+	- allocates a node object for each element in the list, thus uses more memory
+	- also implements the `Deque` interface
+	- has 7 optional operations(`clone`, `addFirst`, `getFirst`, `removeFirst`, `addLast`, `getLast`, `removeLast`)
+	- main benefits: `LinkedList` allows for constant-time insertions or removals *using iterators*: `Iterator.remove()` and `ListIterator.add(E element)`, whereas `ArrayList` requires shifting the remainder of the array over, resulting in O(n) in the worst case
 
 
 **List Implementations Time Complexity:**
 
   | ArrayList | LinkedList
 :--- |:---:|:---:
-Positional Access (get) | **O(1)**  | O(n)
-Insertion (add) | O(1) | O(1)
-ListIterator.add | O(n) | **O(1)**
-Deletion (remove) | O(n) | O(n)
-Iterator.remove | O(n) | **O(1)**
-Search (contains) | O(n) | O(n)
-Iteration (next) | O(n) | O(1)
-Interface | List | List, Queue
+Positional Access: `get(int index)` | **O(1)**  | O(n)
+Insertion: `add(E element)` | O(1) | O(1)
+Insertion: `add(int index, E element)` | O(n) | O(n)
+Insertion: `ListIterator.add(E element)` | O(n) | **O(1)**
+Deletion: `remove(int index)` | O(n) | O(n)
+Deletion: `Iterator.remove()` | O(n) | **O(1)**
+Search: `contains(E element)` | O(n) | O(n)
+Iteration: `ListIterator.next()` | O(1) | O(1)
+Order | insertion-order | insertion-order
+Interface | List | List, Deque
 Implementation | resizable array | doubly-linked list 
 
 
 ---
+
+####Map Implementations
+
+There are 3 general-purpose `Map` Implementations:
+
+- **HashMap**
+- **LinkedHashMap**
+- **TreeMap**
 
 **Map Implementations Time Complexity:**
 
