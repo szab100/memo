@@ -51,6 +51,16 @@ brew install gnu-sed
 
 ---
 
+##### tree -d
+
+`tree` displays a tree view of the filesystem
+
+- `brew install tree`
+
+- `tree -d` to view just the directories and to suppress listing file names
+
+---
+
 ##### To disable AWDL and AirDrop to fix Yosemite WiFi issues:
 
 ```
