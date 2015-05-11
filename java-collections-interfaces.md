@@ -244,7 +244,6 @@ A **Queue** is a collection for holding elements prior to processing.
 
 `Queue` ordering:
 - FIFO (first-in-first-out) - typical implementations (`LinkedList`)
-- LIFO (last-in-first-out) - *stacks*
 - Comparator or the elements' natural ordering - *priority queues* 
 
 `Queue` methods:
