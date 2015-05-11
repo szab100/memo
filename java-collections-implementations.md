@@ -99,7 +99,10 @@ Implementation | buckets | double-linked buckets | Red-Black Tree
 ####Queue Implementations
 
 - **LinkedList**: provides first in, first out (FIFO) queue operations
-- **PriorityQueue**: based on the heap data structure, orders elements according to the order specified at construction time (natural ordering or an explicit Comparator)
+- **PriorityQueue**: 
+	- based on the heap data structure
+	- orders elements according to the order specified at construction time (natural ordering or an explicit Comparator)
+	- characterized by the remove the maximum and insert operations
 
 
 

@@ -139,4 +139,56 @@ Most polymorphic algorithms in the `Collections` class apply specifically to `Li
 
 ---
 
+**Map Interface**
+
+A **Map** is an object that maps keys to values. It models the mathematical function abstraction:  
+1. A map cannot contain duplicate keys.  
+2. Each key can map to at most one value. 
+
+```java
+public interface Map<K,V> {
+
+    // Query Operations:
+    int size();
+    boolean isEmpty();
+    boolean containsKey(Object key);
+    boolean containsValue(Object value);
+    V get(Object key);
+
+    // Modification Operations:
+    V put(K key, V value);
+    V remove(Object key);
+
+    // Bulk Operations:
+    void putAll(Map<? extends K, ? extends V> m);
+    void clear();
+
+    // Views:
+    Set<K> keySet();
+    Collection<V> values();
+    Set<Map.Entry<K, V>> entrySet();
+
+    interface Entry<K,V> {
+
+        K getKey();
+        V getValue();
+        V setValue(V value);
+        boolean equals(Object o);
+        int hashCode();
+    }
+
+    // Comparison and hashing:
+    boolean equals(Object o);
+    int hashCode();
+}
+```
+
+
+
+
+
+
+
+
+
 
