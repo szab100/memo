@@ -75,7 +75,7 @@ public interface SortedSet<E> extends Set<E> {
 ```
 ---
 
-The **List** is an ordered `Collection` (a sequence). The `List` interface adds random access methods:
+The **List** is an ordered `Collection` (a sequence). You can retrieve elements from a `List` by their exact position. 
 
 ```java
 interface List extends Collection {
@@ -226,7 +226,8 @@ public interface Comparable<T> {
 }
 ```
 
-A **Comparator** is an object that encapsulates an ordering.
+A **Comparator** is an object that encapsulates an ordering. To order a sorted collection, such as `TreeSet`, use a `Comparator` that is compatible with `equals`, i.e. the only elements seen as equal when using `compare` are those that are also seen as equal when compared using `equals`.
+
 
 ```java
 public interface Comparator<T> {
@@ -234,11 +235,122 @@ public interface Comparator<T> {
     int compare(T o1, T o2);
 }
 ```
+
 ---
 
+**Queue Interface**
+
+A **Queue** is a collection for holding elements prior to processing. 
+
+`Queue` ordering:
+- FIFO (first-in-first-out) - typical implementations (`LinkedList`)
+- LIFO (last-in-first-out) - *stacks*
+- Comparator or the elements' natural ordering - *priority queues* 
+
+`Queue` methods:
+
+Type of Operation | Throws exception | Returns `null` or `false`
+:--:|:--:|:--:
+Insert | add(e) | offer(e)
+Remove | remove() | poll()
+Examine | element() | peek()
+
+```java
+public interface Queue<E> extends Collection<E> {
+
+    boolean add(E e);
+    boolean offer(E e);
+
+    E remove();
+    E poll();
+
+    E element();
+    E peek();
+}
+```
+
+---
+
+**Deque Interface**
+
+- Deque is short for "double ended queue" (pronounced "deck").  
+- A linear collection with element insertion and removal at *both* ends.  
+- `Deque` can be used as both FIFO (First-In-First-Out) queue and LIFO (Last-In-First-Out) stack.
 
 
+Summary of `Deque` methods:
+
+Type of Operation | Throws exception | Returns `null` or `false` | Throws exception | Returns `null` or `false`
+:-:|:-:|:-:|:-:|:-:
+Insert | addFirst(e) | offerFirst(e) | addLast(e) | offerLast(e)
+Remove | removeFirst() | pollFirst() | removeLast() |  pollLast()
+Examine | getFirst() | peekFirst() | getLast() |  peekLast()
 
 
+- FIFO: `Deque` extends the `Queue` interface.  
+Comparison of `Queue` and `Deque` methods:
+
+Queue Method  |  Equivalent Deque Method
+:-:|:-:
+add(e) | addLast(e)
+offer(e)  |  offerLast(e)
+remove()  |  removeFirst()
+poll() | pollFirst()
+element() |  getFirst()
+peek() | peekFirst()
+
+
+- LIFO: `Deque` can also be used as a stack.  
+Comparison of legacy `Stack` and `Deque` methods:
+
+Legacy Stack Method | Equivalent Deque Method
+:-:|:-:
+push(e) | addFirst(e)
+pop() | removeFirst()
+peek() | peekFirst()
+
+
+```java
+public interface Deque<E> extends Queue<E> {
+
+    // Deque methods:
+    void addFirst(E e);
+    void addLast(E e);
+    boolean offerFirst(E e);
+    boolean offerLast(E e);
+
+    E removeFirst();
+    E removeLast();
+    E pollFirst();
+    E pollLast();
+
+    E getFirst();
+    E getLast();
+    E peekFirst();
+    E peekLast();
+
+    boolean removeFirstOccurrence(Object o);
+    boolean removeLastOccurrence(Object o);
+
+    // Queue methods:
+    boolean add(E e);
+    boolean offer(E e);
+    E remove();
+    E poll();
+    E element();
+    E peek();
+
+    // Legacy Stack methods:
+    void push(E e);
+    E pop();
+
+    // Collection methods:
+    boolean remove(Object o);
+    boolean contains(Object o);
+    public int size();
+    Iterator<E> iterator();
+    Iterator<E> descendingIterator();
+}
+```
 
 
