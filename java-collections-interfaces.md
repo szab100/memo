@@ -183,10 +183,35 @@ public interface Map<K,V> {
 }
 ```
 
+---
 
+**SortedMap Interface**
 
+A **SortedMap** is a `Map` that provides a total ordering on its keys. The map is sorted according to the keys' natural ordering, or according to a `Comparator` provided at the time of the `SortedMap` creation.
 
+```java
+public interface SortedMap<K,V> extends Map<K,V> {
 
+    // Comparator access:
+    Comparator<? super K> comparator();
+
+    // Range-view operations:    
+    SortedMap<K,V> subMap(K fromKey, K toKey);
+    SortedMap<K,V> headMap(K toKey);
+    SortedMap<K,V> tailMap(K fromKey);
+
+    // Endpoints:
+    K firstKey();
+    K lastKey();
+
+    // The Iterator of the collection views traverse the collections in order:
+    Set<K> keySet();
+    Collection<V> values();
+    Set<Map.Entry<K, V>> entrySet();
+}
+```
+
+---
 
 
 
