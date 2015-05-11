@@ -213,6 +213,31 @@ public interface SortedMap<K,V> extends Map<K,V> {
 
 ---
 
+**Object Ordering**:
+- Comparable Interface
+- Comparator
+
+The **Comparable Interface** consists of one `compareTo` method that returns a negative integer, 0, or a positive integer depending on whether the receiving object is less than, equal to, or greater than the specified object. 
+
+```java
+public interface Comparable<T> {
+
+    public int compareTo(T o);
+}
+```
+
+A **Comparator** is an object that encapsulates an ordering.
+
+```java
+public interface Comparator<T> {
+
+    int compare(T o1, T o2);
+}
+```
+---
+
+
+
 
 
 
