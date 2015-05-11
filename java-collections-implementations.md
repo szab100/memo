@@ -75,9 +75,9 @@ Implementation | resizable array | doubly-linked list
 
 There are 3 general-purpose `Map` Implementations:
 
-- **HashMap**
-- **LinkedHashMap**
-- **TreeMap**
+- **HashMap** : fast
+- **LinkedHashMap**: insertion-order iteration, near-HashMap performance
+- **TreeMap**: slow (O(log n)), SortedMap operations and key-ordered Collection-view iteration
 
 **Map Implementations Time Complexity:**
 
@@ -92,5 +92,19 @@ Order | no guarantee | insertion-order | sorted |
 Null values/keys | allowed | allowed | only values 
 Interfaces | Map | Map | Map, SortedMap
 Implementation | buckets | double-linked buckets | Red-Black Tree
+
+
+---
+
+####Queue Implementations
+
+- **LinkedList**: provides first in, first out (FIFO) queue operations
+- **PriorityQueue**: based on the heap data structure, orders elements according to the order specified at construction time (natural ordering or an explicit Comparator)
+
+
+
+
+
+
 
 
