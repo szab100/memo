@@ -73,7 +73,7 @@ Implementation | resizable array | doubly-linked list
 
 ####Map Implementations
 
-There are 3 general-purpose `Map` Implementations:
+There are 3 general-purpose `Map` implementations:
 
 - **HashMap** : fast
 - **LinkedHashMap**: insertion-order iteration, near-HashMap performance
@@ -98,14 +98,33 @@ Implementation | buckets | double-linked buckets | Red-Black Tree
 
 ####Queue Implementations
 
+There are 2 general-purpose `Queue` implementations:
+
 - **LinkedList**: provides first in, first out (FIFO) queue operations
 - **PriorityQueue**: 
 	- based on the heap data structure
-	- orders elements according to the order specified at construction time (natural ordering or an explicit Comparator)
-	- characterized by the remove the maximum and insert operations
+	- orders elements according to the order specified at construction time (natural ordering or an explicit `Comparator`)
+	- the *head* of the queue is the least element with respect to the specified ordering
+	- `iterator` is not guaranteed to traverse the elements of the `PriorityQueue` in any particular order. For ordered traversal, use `Arrays.sort(pq.toArray())`.
 
+---
 
+####Deque Implementations
 
+There are 2 general-purpose `Deque` implementations:
+
+- **LinkedList**: 
+	- more flexible
+	- implements all optional `List` operations
+	- `null` elements are allowed
+	- consumes more memory 
+	- not ideal to iterate 
+- **ArrayDeque**: 
+	- the resizable array implementation
+	- more efficient than the `LinkedList` for add and remove operation at both ends
+	- to iterate use:
+		- the `foreach` loop
+		- the `Iterator` (for the forward traversal)
 
 
 
