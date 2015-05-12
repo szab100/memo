@@ -126,6 +126,15 @@ There are 2 general-purpose `Deque` implementations:
 		- the `foreach` loop
 		- the `Iterator` (for the forward traversal)
 
+**Queue and Deque Implementations Time Complexity:**
+
+  | offer/add | peek/element | poll/remove
+:-:|:-:|:-:|:-:
+LinkedList | O(1) | O(1) | O(1) 
+PriorityQueue | O(log n) | O(1) | O(log n) 
+ArrayDeque | O(1) | O(1) | O(1) 
+
+---
 
 
 
