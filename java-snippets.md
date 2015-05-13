@@ -4,6 +4,14 @@
  	c.removeAll(Collections.singleton(null));
 ```
 
+- To remove all elements that map to a specified value from a `Map`:
+
+	If you have a `Map` that maps people to their occupation and you want to eliminate all the lawyers: 
+
+```java
+map.values().removeAll(Collections.singleton(LAWYER));
+```
+
 - To add multiple values to already initialized list:
 
 ```java
