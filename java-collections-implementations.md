@@ -136,6 +136,23 @@ ArrayDeque | O(1) | O(1) | O(1)
 
 ---
 
+####Bridge between array-based and collection-based APIs
+
+- `Arrays.asList()` 
+	- `Arrays.asList(a)` method returns a `List` view of its array argument.
+	- Changes to the list write through to the array and vice versa. 
+	- The size of the collection is the size of the array and cannot be changed (cannot call `add` or `remove` methods).
+	- A reference to the backing array is not retained.
+- `Collection.toArray()`
+	- The `Collection` interface `toArray` method with no arguments creates a new array of `Object` whose length is identical to the number of elements in a `Collection` c:  
+	`Object[] a = c.toArray();`
+
+---
+
+
+
+
+
 
 
 
