@@ -63,7 +63,7 @@ public interface SortedSet<E> extends Set<E> {
     // Comparator access:
     Comparator<? super E> comparator();
 
-    // Range-view operations:
+    // Range-view operations, ranges are half-open [)
     SortedSet<E> subSet(E fromElement, E toElement);
     SortedSet<E> headSet(E toElement);
     SortedSet<E> tailSet(E fromElement);
@@ -195,7 +195,7 @@ public interface SortedMap<K,V> extends Map<K,V> {
     // Comparator access:
     Comparator<? super K> comparator();
 
-    // Range-view operations:    
+    // Range-view operations, ranges are half-open [)    
     SortedMap<K,V> subMap(K fromKey, K toKey);
     SortedMap<K,V> headMap(K toKey);
     SortedMap<K,V> tailMap(K fromKey);
