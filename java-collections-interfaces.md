@@ -136,6 +136,9 @@ Most polymorphic algorithms in the `Collections` class apply specifically to `Li
 - `binarySearch` — searches for an element in an ordered List using the binary search algorithm.
 - `indexOfSubList` — returns the index of the first sublist of one List that is equal to another.
 - `lastIndexOfSubList` — returns the index of the last sublist of one List that is equal to another.
+- `frequency` — counts the number of times the specified element occurs in the specified collection.
+- `disjoint` — determines whether two Collections are disjoint; that is, whether they contain no elements in common.
+- `min` and `max` - return the minimum and maximum element contained in a Collection, either according to the elements' natural ordering or the specified Comparator.
 
 ---
 

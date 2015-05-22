@@ -1,4 +1,10 @@
 
+__The Java Class File Disassembler:__
+
+`javap -c Foo.class` will show the disassembly of Foo.class.
+
+---
+
 __String concatenation:__
 
 ```java
