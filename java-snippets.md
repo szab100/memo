@@ -79,6 +79,18 @@ public class Person {
 
 ---
 
+__IntegerCache, ShortCache, ByteCache, CharacterCache__
+
+The `Integer` class has a static cache, that stores 256 `Integer` objects.  
+
+Two instances of the wrapper objects will always be == when their primitive values are the same for:
+
+- `Short` and `Integer` from -128 to 127
+- `Byte`
+- `Boolean`
+- `Character` from \u0000 to \u007f (7f is 127 in decimal)
+
+---
 
 
  	
