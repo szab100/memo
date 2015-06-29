@@ -60,4 +60,26 @@
 - Kill a process: `kill -9 <pid>` or `pkill -f <proc_name>`
 					
 ---
-					
+
+##### top:
+
+`top` - to display info about processes  
+`?`  - to get help when `top` is running  
+
+- Linux (CentOS): 
+
+`<` - move sort field left  
+`>` - move sort field right  
+`O` - to select the sort field  
+`n` - to sort by _memory_ usage  
+`k` - to sort by _CPU_ usage  
+
+- OS X:
+
+```
+top -o cpu
+top -o mem
+```
+
+---
+				

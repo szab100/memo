@@ -83,7 +83,7 @@ __IntegerCache, ShortCache, ByteCache, CharacterCache__
 
 The `Integer` class has a static cache, that stores 256 `Integer` objects.  
 
-Two instances of the wrapper objects will always be == when their primitive values are the same for:
+Two autoboxing conversions of a primitive value p will yield an identical reference (that is, the == comparison will return true) if p is:
 
 - `Short` and `Integer` from -128 to 127
 - `Byte`
