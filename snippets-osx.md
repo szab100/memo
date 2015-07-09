@@ -110,6 +110,12 @@ cd "$(pbpaste)"
 mdfind <keyword>
 ```
 
+To find all executables:
+
+```
+mdfind "kMDItemKind == 'Unix Executable File'"
+```
+
 ---
 
 
