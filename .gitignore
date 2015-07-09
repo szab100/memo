@@ -1,3 +1,47 @@
-.idea*
+# OSX 
 .DS_Store
+
+# Java 
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# Maven
+target/
+
+# Eclipse
 .project
+.settings/
+local.properties
+.metadata
+.loadpath
+.classpath
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+
+# IntelliJ
+.idea*
+
+# node.js
+node_modules
+build/Release
+.lock-wscript
+.grunt
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Virtual machine crash logs
+hs_err_pid*
+
+# Office
+~*
+
