@@ -58,6 +58,7 @@
 - Look at auto start services: `chkconfig`
 - Restart a service: `service <name> restart`
 - Kill a process: `kill -9 <pid>` or `pkill -f <proc_name>`
+- Run the last command with sudo: `sudo !!`
 					
 ---
 
@@ -82,4 +83,4 @@ top -o mem
 ```
 
 ---
-				
+	

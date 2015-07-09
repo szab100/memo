@@ -102,8 +102,15 @@ or
 cd "$(pbpaste)"
 ```
 
+---
 
+##### Use Spotlight to search from command line:
 
+```
+mdfind <keyword>
+```
+
+---
 
 
 
