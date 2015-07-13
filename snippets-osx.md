@@ -1,3 +1,16 @@
+##### Terminal shortcuts:
+---
+
+Shortcut | Terminal/iTerm2 command
+:--- |:---
+<kbd>Ctrl</kbd> + <kbd>U</kbd> | delete from the cursor to the start of the line
+<kbd>Ctrl</kbd> + <kbd>K</kbd> | delete from the cursor to the end of the line
+<kbd>Ctrl</kbd> + <kbd>W</kbd> | delete from the cursor to the start of the word
+<kbd>Ctrl</kbd> + <kbd>A</kbd> | go to the start of the line
+<kbd>Ctrl</kbd> + <kbd>E</kbd> | go to the end of the line
+
+---
+
 ##### locate:
 
 - To update db of files indexed by locate:
