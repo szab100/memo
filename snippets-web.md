@@ -34,15 +34,18 @@ nav a, button {
 or 
 
 ```css
-@media screen and (min-width: 500px) and (max-width: 960px) {
-}
+@media screen and (min-width: 500px) and (max-width: 960px) {}
 ```
 
-- CSS flexbox:
+- CSS Flexbox:
 
-```css
+	- Source code for mobile-first 3-columns layout with full-width header and footer, implemented using flexbox:  
+	[https://github.com/moodcheerful/memo/blob/master/snippets-flexbox-holy-grail.html](https://github.com/moodcheerful/memo/blob/master/snippets-flexbox-holy-grail.html)
 
-```
+	- View the responsiveness of the above html page in a browser:  
+	[http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/snippets-flexbox-holy-grail.html]
+(http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/snippets-flexbox-holy-grail.html)
+
 
 
 
