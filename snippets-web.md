@@ -16,5 +16,17 @@ img, embed, object, video {
 }
 ```
 
+- touch targets:
+
+```css
+nav a, button {
+	min-width: 48px;
+	min-height: 48px;
+	padding: 1.5em;
+}
+```
+
+
+
 
 
