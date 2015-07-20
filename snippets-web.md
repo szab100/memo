@@ -26,6 +26,26 @@ nav a, button {
 }
 ```
 
+- CSS media queries:
+
+```html
+<link rel="stylesheet" media="screen and (min-width: 500px)" href="over500.css">
+```
+or 
+
+```css
+@media screen and (min-width: 500px) and (max-width: 960px) {
+}
+```
+
+- CSS flexbox:
+
+```css
+
+```
+
+
+
 
 
 

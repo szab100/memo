@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			background: grey;
+		}
+		.container {
+			width: 100%;
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-flow: row wrap;
+			flex-flow: row wrap;
+		}
+		.container > * {
+			padding: 1em;
+			-webkit-flex: 1 100%;
+			flex: 1 100%;
+		}
+		.header {
+			text-align: center;
+			background: tomato;
+		}
+		.footer {
+			background: lightgreen;
+		}
+		.main {
+			background: deepskyblue;
+		}
+		.nav {
+			background: gold;
+		}
+		.aside {
+			background: hotpink;
+		}
+		/* Small screens */
+		/* Source order for mobile-first approach: 
+		header, main, nav, aside, footer */
+
+		/* Medium screens */
+		@media screen and (min-width: 550px) {
+			.nav, .aside {
+				-webkit-flex: 1 auto;
+				flex: 1 auto;
+			}
+		}
+		/* Large screens */
+		@media screen and (min-width: 960px) {
+			.main {
+				-webkit-flex: 3 0px;
+				flex: 3 0px;
+			}
+			.nav {
+				-webkit-order: 1;
+				order: 1;
+			}
+			.main {
+				-webkit-order: 2;
+				order: 2;
+			}
+			.aside {
+				-webkit-order: 3;
+				order: 3;
+			}
+			.footer {
+				-webkit-order: 4;
+				order: 4;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header class="header">Responsive Web Design</header>
+		<article class="main">Here is the example of mobile-first 3-columns layout with full-width header and footer, implemented using the CSS flexbox.</article>
+		<nav class="nav">Nav</nav>
+		<aside class="aside">Aside</aside>
+		<footer class="footer">Footer</footer>
+	</div>
+</body>
+</html>
