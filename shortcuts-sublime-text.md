@@ -11,7 +11,7 @@ Sublime Text shortcuts
 	- <kbd>⌘</kbd> + <kbd>D</kbd> to select the next occurrence of the selected word
 - Install Package: <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
 	- "Package Control: Install Package":
-	- Solarized Color Scheme, GitGutter, BracketHighlighter, Markdown Preview, DashDoc, SublimeLinter, SublimeLinter-jscs
+	- Solarized Color Scheme, GitGutter, BracketHighlighter, Markdown Preview, DashDoc, SublimeLinter, SublimeLinter-jscs, SublimeLinter-jshint
 - Markdown Preview: 
 	- <kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>  
 	- select "Markdown Preview: Preview in Browser
