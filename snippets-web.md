@@ -40,11 +40,20 @@ or
 - CSS Flexbox:
 
 	- Source code for mobile-first 3-columns layout with full-width header and footer, implemented using flexbox:  
-	[https://github.com/moodcheerful/memo/blob/master/snippets-flexbox-holy-grail.html](https://github.com/moodcheerful/memo/blob/master/snippets-flexbox-holy-grail.html)
+	[https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html](https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html)
 
 	- View the responsiveness of the above html page in a browser:  
-	[http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/snippets-flexbox-holy-grail.html]
-(http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/snippets-flexbox-holy-grail.html)
+	[http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html]
+(http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html)
+
+- CSS Off Canvas Drawer:
+
+	- Source code for mobile-first off-canvas drawer layout:  
+	[https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html](https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html)
+
+	- View the responsiveness of the above html page in a browser:  
+	[http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html]
+(http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html)
 
 
 
