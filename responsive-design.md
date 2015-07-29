@@ -132,4 +132,33 @@ nav a, button {
 		}
 		```
 
+- truncate lines with ellipsis:
+
+	- ellipsis after one line:
+
+	```css
+	.one-line-ellipsis {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	```
+
+	- ellipsis after multiple lines:
+
+	```css
+	.multiple-lines-ellipsis {
+		display: block;
+		display: -webkit-box;
+		display: -moz-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		/* Firefox needs separate solution for line clamping */
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	```
+
+
+
 
