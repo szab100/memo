@@ -1,6 +1,6 @@
-### Responsive Web Design
+## Responsive Web Design
 
-- setting `viewport`:
+#### Set `viewport`
 
 ```html
 <head>
@@ -8,15 +8,17 @@
 </head>
 ```
 
-- `max-width` on elements in CSS:
+--
+#### `max-width` on elements
 
-```css
+```css`
 img, embed, object, video {
 	max-width: 100%;
 }
 ```
 
-- touch targets:
+--
+#### Touch targets
 
 ```css
 nav a, button {
@@ -26,7 +28,8 @@ nav a, button {
 }
 ```
 
-- CSS `media` queries:
+--
+#### CSS media queries
 
 ```html
 <link rel="stylesheet" media="screen and (min-width: 500px)" href="over500.css">
@@ -35,106 +38,110 @@ nav a, button {
 @media screen and (min-width: 500px) and (max-width: 960px) {}
 ```
 
-- CSS `flexbox` pattern:
+--
+#### Flexbox design pattern
 
-	- source code for mobile-first 3-columns layout with full-width header and footer, implemented using flexbox:  
-	[https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html](https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html)
+- source code for mobile-first 3-columns layout with full-width header and footer, implemented using flexbox:  
+[https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html](https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html)
 
-	- view the responsiveness of the above html page in a browser:  
-	[http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html]
-(http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html)
+- view the responsiveness of the above html page in a browser:  
+[http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html](http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html)
 
-- CSS off-canvas drawer pattern:
+--
+#### Off-canvas drawer design pattern
 
-	- source code for mobile-first off-canvas drawer layout:  
-	[https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html](https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html)
+- source code for mobile-first off-canvas drawer layout:  
+[https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html](https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html)
 
-	- view the responsiveness of the above html page in a browser:  
-	[http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html]
-(http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html)
+- view the responsiveness of the above html page in a browser:  
+[http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html](http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html)
 
-- responsive tables:
+--
+#### Responsive tables
 
-	- hidden columns:
-		```css
-		@media screen and (max-width: 500px) {
-			.hidden {
-				display: none;
-			}
+- hidden columns:
+
+	```css
+	@media screen and (max-width: 500px) {
+		.hidden {
+			display: none;
 		}
-		```
+	}
+	```
 
-	- contained horizontal scroll:
-		```css
-		div.contained_table {
-			width: 100%;
-			overflow-x: auto;
+- contained horizontal scroll:
+
+	```css
+	div.contained_table {
+		width: 100%;
+		overflow-x: auto;
+	}
+	```
+
+- no columns, all data formatted with pseudo `before` selector:
+
+	```css
+	@media all and (max-width: 500px){
+		/* stop table behavior */
+		table, thead, tbody, th, td, tr {
+			display: block;	
 		}
-		```
-
-	- no columns, all data formatted with pseudo `before` selector:
-
-		```css
-		@media all and (max-width: 500px){
-			/* stop table behavior */
-			table, thead, tbody, th, td, tr {
-				display: block;	
-			}
-			/* hide table header */
-			thead tr {
-				position: absolute;
-				top: -9999px;
-				left: -9999px;
-			}
-			/* make room for data headers */
-			td {
-				position: relative;
-				padding-left: 50%;
-			}
-			/* add row lables */
-			td:before {
-				position: absolute;
-				left: 5px;
-				content: attr(data-th);
-				font-weight: bold;
-			}
+		/* hide table header */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
 		}
-		```
-		
-		```html
-		<table>
-			<thead></thead>
-			<tbody>
-				<tr>
-					<td data-th="label"></td>
-				</tr>
-			</tbody>
-		</table>		
-		```
-
-- fonts:
-
-	- ideal measure (the length of the line of text): 65 characters per line
-	- font size:
-
-		```css
-		.goodFont {
-			font-size: 16px;
-			line-height: 1.2em;
+		/* make room for data headers */
+		td {
+			position: relative;
+			padding-left: 50%;
 		}
-		.biggerFont {
-			font-size: 18px;
-			line-height: 1.25em;
+		/* add row lables */
+		td:before {
+			position: absolute;
+			left: 5px;
+			content: attr(data-th);
+			font-weight: bold;
 		}
-		.smallFont {
-			font-size: 14px;
-			line-height: 1.2em;
-		}
-		```
+	}
+	```	
+	```html
+	<table>
+		<thead></thead>
+		<tbody>
+			<tr>
+				<td data-th="label"></td>
+			</tr>
+		</tbody>
+	</table>		
+	```
 
-- truncate lines with ellipsis:
+--
+#### Fonts
 
-	- ellipsis after one line:
+- ideal measure (the length of the line of text): 65 characters per line
+- font size:
+
+	```css
+	.goodFont {
+		font-size: 16px;
+		line-height: 1.2em;
+	}
+	.biggerFont {
+		font-size: 18px;
+		line-height: 1.25em;
+	}
+	.smallFont {
+		font-size: 14px;
+		line-height: 1.2em;
+	}
+	```
+
+--
+#### Truncate lines with ellipsis
+
+- ellipsis after one line:
 
 	```css
 	.one-line-ellipsis {
@@ -144,7 +151,7 @@ nav a, button {
 	}
 	```
 
-	- ellipsis after multiple lines:
+- ellipsis after multiple lines:
 
 	```css
 	.multiple-lines-ellipsis {
@@ -158,6 +165,40 @@ nav a, button {
 		text-overflow: ellipsis;
 	}
 	```
+
+--
+#### Responsive images
+
+- use `calc` to space 3 images across the viewport:
+
+	```css
+	img {
+		float: left;
+		margin-right: 10px;
+		width: calc((100% - 2*10px)/3);
+	}
+	img:last-of-type {
+		margin-right: 0;
+	}
+	```
+
+- viewport units: `vh`, `vw`, `vmin = min(vh, vw)`, `vmax = max(vh, vw)`
+
+	```css
+	img { 
+		max-height: 100vh; 
+	}
+	```
+
+- raster: use `jpeg`; vector: use `svg`, or `png` if no `svg`, but not `gif`
+
+
+
+
+
+
+
+
 
 
 
