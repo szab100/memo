@@ -1,6 +1,6 @@
 ## Responsive Web Design
 
-#### Set `viewport`
+#### Set viewport
 
 ```html
 <head>
@@ -8,8 +8,8 @@
 </head>
 ```
 
---
-#### `max-width` on elements
+---
+#### max-width on elements
 
 ```css`
 img, embed, object, video {
@@ -17,7 +17,7 @@ img, embed, object, video {
 }
 ```
 
---
+---
 #### Touch targets
 
 ```css
@@ -28,7 +28,7 @@ nav a, button {
 }
 ```
 
---
+---
 #### CSS media queries
 
 ```html
@@ -38,7 +38,7 @@ nav a, button {
 @media screen and (min-width: 500px) and (max-width: 960px) {}
 ```
 
---
+---
 #### Flexbox design pattern
 
 - source code for mobile-first 3-columns layout with full-width header and footer, implemented using flexbox:  
@@ -47,7 +47,7 @@ nav a, button {
 - view the responsiveness of the above html page in a browser:  
 [http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html](http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html)
 
---
+---
 #### Off-canvas drawer design pattern
 
 - source code for mobile-first off-canvas drawer layout:  
@@ -56,7 +56,7 @@ nav a, button {
 - view the responsiveness of the above html page in a browser:  
 [http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html](http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html)
 
---
+---
 #### Responsive tables
 
 - hidden columns:
@@ -117,7 +117,7 @@ nav a, button {
 	</table>		
 	```
 
---
+---
 #### Fonts
 
 - ideal measure (the length of the line of text): 65 characters per line
@@ -138,7 +138,7 @@ nav a, button {
 	}
 	```
 
---
+---
 #### Truncate lines with ellipsis
 
 - ellipsis after one line:
@@ -166,7 +166,7 @@ nav a, button {
 	}
 	```
 
---
+---
 #### Responsive images
 
 - use `calc` to space 3 images across the viewport:
@@ -192,7 +192,31 @@ nav a, button {
 
 - raster: use `jpeg`; vector: use `svg`, or `png` if no `svg`, but not `gif`
 
+- caption:
 
+	```html
+	<figure>
+		<img src="path/to/image.jpg">
+		<figcaption>here is the caption</figcaption>
+	</figure>
+	```
+
+- conditionally load device-specific images for large screens only:
+
+	```css
+	@media (max-width: 500px) {
+	   .image {
+	      background-image: none;
+	   }
+	}
+	@media (min-width: 501px) {
+	   .image {
+	      background-image: url(image.jpg);
+	   }
+	}
+	```
+
+- glyphs: [Unicode character sets](http://unicode-table.com/en/sets/)
 
 
 
