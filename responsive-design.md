@@ -218,7 +218,53 @@ nav a, button {
 
 - glyphs: [Unicode character sets](http://unicode-table.com/en/sets/)
 
+	```html
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			span {
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<span>&#119070;</span>
+	</body>
+	```
 
+- CSS icon fonts:
+	- [We Love Icon Fonts](http://weloveiconfonts.com/)
+	- [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+	- [Zocial:](http://zocial.smcllns.com/)
+
+	```html
+	<!doctype html>
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			@import url(http://weloveiconfonts.com/api/?family=zocial);
+
+			[class*="zocial-"]:before {
+				display: inline-block;
+				font-family: 'zocial', sans-serif;
+				text-shadow: 3px 3px 3px #aaa;
+				width: 1.75em;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="zocial-facebook">Sign in with Facebook</p>
+		<p class="zocial-twitter">Follow me on Twitter</p>
+		<p class="zocial-amazon">Buy at Amazon</p>
+		<p class="zocial-skype">Skype me</p>
+		<p class="zocial-dropbox">Sync with Dropbox</p>
+		<p class="zocial-reddit">Share on Reddit</p>
+	</body>
+	</html>
+	```
+	
 
 
 
