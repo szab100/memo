@@ -235,36 +235,50 @@ nav a, button {
 
 - CSS icon fonts:
 	- [We Love Icon Fonts](http://weloveiconfonts.com/)
-	- [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+	- [Font Awesome:](http://fortawesome.github.io/Font-Awesome/)
+
+		```html
+		<head>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+			<style type="text/css">
+				.fa {
+					color: red;
+				}
+			</style>
+		</head>
+		<body>
+			<i class="fa fa-youtube-play"></i>
+		</body>
+		```
+
 	- [Zocial:](http://zocial.smcllns.com/)
 
-	```html
-	<!doctype html>
-	<html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<style type="text/css">
-			@import url(http://weloveiconfonts.com/api/?family=zocial);
+		```html
+		<!doctype html>
+		<html>
+		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<style type="text/css">
+				@import url(http://weloveiconfonts.com/api/?family=zocial);
 
-			[class*="zocial-"]:before {
-				display: inline-block;
-				font-family: 'zocial', sans-serif;
-				text-shadow: 3px 3px 3px #aaa;
-				width: 1.75em;
-			}
-		</style>
-	</head>
-	<body>
-		<p class="zocial-facebook">Sign in with Facebook</p>
-		<p class="zocial-twitter">Follow me on Twitter</p>
-		<p class="zocial-amazon">Buy at Amazon</p>
-		<p class="zocial-skype">Skype me</p>
-		<p class="zocial-dropbox">Sync with Dropbox</p>
-		<p class="zocial-reddit">Share on Reddit</p>
-	</body>
-	</html>
-	```
-	
+				[class*="zocial-"]:before {
+					display: inline-block;
+					font-family: 'zocial', sans-serif;
+					text-shadow: 3px 3px 3px #aaa;
+					width: 1.75em;
+				}
+			</style>
+		</head>
+		<body>
+			<p class="zocial-facebook">Sign in with Facebook</p>
+			<p class="zocial-twitter">Follow me on Twitter</p>
+			<p class="zocial-amazon">Buy at Amazon</p>
+			<p class="zocial-skype">Skype me</p>
+			<p class="zocial-dropbox">Sync with Dropbox</p>
+			<p class="zocial-reddit">Share on Reddit</p>
+		</body>
+		</html>
+		```
 
 
 
