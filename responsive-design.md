@@ -169,7 +169,7 @@ nav a, button {
 ---
 #### Responsive images
 
-- use `calc` to space 3 images across the viewport:
+- use `calc`: example of spacing 3 images across the viewport:
 
 	```css
 	img {
@@ -280,7 +280,12 @@ nav a, button {
 		</html>
 		```
 
+- srcset
 
+	```html
+	<img src="small.jpg" srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1020w" alt="Name">
+	<img src="image_2x.jpg" srcset="image_2x.jpg 2x, image_1x.jpg 1x" alt="Name">
+	```
 
 
 
