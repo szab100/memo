@@ -321,5 +321,15 @@ nav a, button {
 	</picture>
 	```
 
+	- with device pixel ratio:
+
+	```html
+	<picture>
+		<source media="(min-width: 800px)" srcset="images-large-1600_2x.jpg 2x, images-large-800_1x.jpg">
+		<source media="(min-width: 500px)" srcset="image-mid.jpg">
+		<img src="image-small.jpg" alt="Name">
+	</picture>
+	```
+
 
 
