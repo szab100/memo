@@ -280,15 +280,46 @@ nav a, button {
 		</html>
 		```
 
-- srcset
+- `srcset`
+
+	- device pixel ratio:
 
 	```html
-	<img src="small.jpg" srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1020w" alt="Name">
 	<img src="image_2x.jpg" srcset="image_2x.jpg 2x, image_1x.jpg 1x" alt="Name">
 	```
 
+	- image size:
 
+	```html
+	<img src="large.jpg" srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1020w" alt="Name">
+	```
 
+	- srcset with sizes:
+
+	```html
+	<img src="pic_800.jpg" sizes="(max-width: 400px) 100vw, (min-width: 401px) 50vw" srcset="pic_400.jpg 400w, pic_800.jpg 800w" alt="Name">
+	```
+
+- `<picture>` element:
+
+	- with media attribute:
+
+	```html
+	<picture>
+		<source media="(min-width: 800px)" srcset="images-large.jpg">
+		<source media="(min-width: 500px)" srcset="image-mid.jpg">
+		<img src="image-small.jpg" alt="Name">
+	</picture>
+	```
+
+	- with type attribute:
+
+	```html
+	<picture>
+		<source srcset="logo.svg" type="image/svg+xml">
+		<img src="logo.png" alt="Name">
+	</picture>
+	```
 
 
 
