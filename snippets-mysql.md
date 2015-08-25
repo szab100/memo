@@ -66,3 +66,19 @@ mysql -u root -p < privs.sql
 ```
 
 ---
+
+##### 2 ways to connect to `mysqld` server:
+
+- using a Unix socket file (default `/tmp/mysql.sock`):
+	- with the special host name `localhost`
+	- only on the same computer
+	- faster than TCP/IP
+
+- using TCP/IP network socket (default port 3306)
+	- 127.0.0.1 != `localhost`
+	- MySQL will not auto-resolve the host name `localhost` in `/etc/hosts` to 127.0.0.1
+
+
+
+
+
