@@ -131,6 +131,12 @@ mdfind "kMDItemKind == 'Unix Executable File'"
 
 ---
 
+##### To find all Java apps:
 
+```
+sudo find /Applications -type d -name *.app -prune -exec sh -c 'ls -R "$1" | grep -q \.jar\$' {} {} \; -print
+```
+
+---
 
 
