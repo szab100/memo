@@ -34,12 +34,16 @@ The code above will output: `[aaa, included]`
 
 __Method Overloading vs. Overriding:__  
 
-	- Method **Overloading**: method with same name co-exists in same class, but they must have different method signatures. Resolved using static binding at compile time.
+- Method **Overloading**: 
+	- Method with same name co-exists in same class, but they must have different method signatures. 
+	- Resolved using static binding at compile time.
 	
-	- Method **Overriding**: method with same name and same signature is declared in derived class or sub-class. Resolved using dynamic binding at runtime. 
-	
-		Examples: `equals(), hashCode(), compareTo()`. 
-		Cannot override static methods (`main()`, for example) because they are associated with Class rather than Object, and resolved and bonded during compile time. Also, private and final methods cannot be overridden. Good practice is to use `@Override` annotation.
+- Method **Overriding**: 
+	- Method with same name and same signature is declared in derived class or sub-class.
+	- Resolved using dynamic binding at runtime. 
+	- Examples: `equals(), hashCode(), compareTo()`. 
+	- Cannot override static methods (`main()`, for example) because they are associated with Class rather than Object, and resolved and bonded during compile time. Also, private and final methods cannot be overridden. 
+	- Good practice is to use `@Override` annotation.
 
 ---
 
@@ -56,6 +60,7 @@ public class Person {
 		this.age = age;
 	}
 	
+	@Override
 	public boolean equals (Object y) {
 		if (y == this) return true;
 		if (y == null) return false;
@@ -67,7 +72,7 @@ public class Person {
 	// satisfies the hashCode contract
 	@Override
     public int hashCode() {		
-        return 31 * name.hashCode() + age;
+        return (17 * name.hashCode() + age) % 31;
     }
 
 	@Override    
