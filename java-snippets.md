@@ -107,8 +107,15 @@ Operator | Bitwise Operation
 >>     | Signed right shift
 >>>    | Unsigned right shift
 &      | Bitwise AND
-^      | Bitwise exclusive OR
 &#124;      | Bitwise inclusive OR
+^      | Bitwise exclusive OR
+
+
+& | &#124; | ^
+:---: | :---: | :---:
+x & 0 = 0 | x &#124; 0 = x | x ^ 0 = x
+x & (-1) = x | x &#124; (-1) = -1 | x ^ (-1) = ~x
+x & x = x | x &#124; x = x | x ^ x = 0
 
 
 - Left shift:  
