@@ -130,21 +130,13 @@ x & x = x | x &#124; x = x | x ^ x = 0
   `(n << s) == n * Math.pow(2, s)`
 
 - Right shifts:
-<<<<<<< HEAD
 	- the __unsigned__ (or logical) right shift operator `>>>` inserts a 0 into the leftmost bit (most significant bit):  
 	`-1 >>> 31 == 1`
-	- the leftmost bit inserted by the __signed__ right shift operator `>>` depends on sign extension: 0 for positive n and 1 for negative n:  
+	- the leftmost bit inserted by the __signed__ right shift operator `>>` depends on sign extension (0 for positive n and 1 for negative n):  
 	`-1 >> 1 == -1`
 	- the __signed__ right shift operator `>>` for negative integers is NOT equal to division by 2:  
 	`-3 / 2 = -1`, whereas `-3 >> 1 = -2`
 	- if n >= 0:  
-=======
-  - the unsigned (or logical) right shift operator `>>>` inserts a 0 into the leftmost bit (most significant bit):  
-	`-1 >>> 31 == 1`
-  - the leftmost bit inserted by the signed right shift operator `>>` depends on sign extension: 0 for positive n and 1 for negative n:  
-	`-1 >> 1 == -1`
-  - if n >= 0:  
->>>>>>> 329b949c43f7c7bfd444719bcde163b760502154
     `(n >> s) == (int)(n / Math.pow(2, s))`  
     `(n >>> s) == (n >> s)`
 	- if n < 0:  
