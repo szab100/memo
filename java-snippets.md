@@ -50,7 +50,7 @@ __Method Overloading vs. Overriding:__
 __Implementing `equals()` and `hashCode()` override:__
 
 ```java
-public class Person {
+public class Person implements Comparable<Person> {
 
 	private String name;
 	private int age;
@@ -61,7 +61,7 @@ public class Person {
 	}
 
 	@Override
-	public boolean equals (Object y) {
+	public boolean equals(Object y) {
 		if (y == this) return true;
 		if (y == null) return false;
 		if (y.getClass() != this.getClass()) return false;
@@ -71,13 +71,26 @@ public class Person {
 
 	// satisfies the hashCode contract
 	@Override
-    public int hashCode() {		
-        return (17 * name.hashCode() + age) % 31;
-    }
+	public int hashCode() {
+		return (17 * name.hashCode() + age) % 31;
+	}
 
-	@Override    
-	public String toString () {
+	@Override
+	public String toString() {
 		return name + " " + age;
+	}
+
+	// impose total ordering, i.e. ordering that is compatible with equals:
+	// (a.compareTo(b) == 0) => a.equals(b)
+	@Override
+	public int compareTo(Person other) {
+
+		// lexicographic ordering:
+		int nameComp = name.compareTo(other.name);
+
+		// if names are the same, return in seniority order:
+		return (nameComp != 0 ? nameComp
+				: (age < other.age ? -1 : (age == other.age ? 0 : 1)));
 	}
 }
 ```
