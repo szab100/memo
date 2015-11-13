@@ -72,7 +72,7 @@ public class Person implements Comparable<Person> {
 	// satisfies the hashCode contract
 	@Override
 	public int hashCode() {
-		return (17 * name.hashCode() + age) % 31;
+		return (31 * name.hashCode() + age);
 	}
 
 	@Override
