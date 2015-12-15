@@ -14,9 +14,9 @@
 - Disk space of subfolders: `du --max-depth 1 | sort -n`
 - RAM and swap usage: `free -mt`
 - Disk bandwidth usage: `iotop`
-- Replace text in all files in a folder (recursive): 
+- Replace text in all files in a folder (recursive):
 	`find ./ -type f -exec sed -i 's/apple/orange/g' {} \;`
-	
+
 
 ---
 
@@ -32,7 +32,7 @@
 	- on Ubuntu:
 		`usermod -a -G sudo <username>`
 	- on CentOS:
-	
+
 		```
 		groupadd sudo
 		visudo and add: %sudo ALL=(ALL) ALL
@@ -42,7 +42,7 @@
 
 ##### To install Nano:
 
-- `yum install sudo nano`	
+- `yum install sudo nano`
 - in ~/.bashrc : `export EDITOR=nano`
 
 ---
@@ -59,7 +59,7 @@
 - Restart a service: `service <name> restart`
 - Kill a process: `kill -9 <pid>` or `pkill -f <proc_name>`
 - Run the last command with sudo: `sudo !!`
-					
+
 ---
 
 ##### top:
@@ -67,7 +67,7 @@
 `top` - to display info about processes  
 `?`  - to get help when `top` is running  
 
-- Linux (CentOS): 
+- Linux (CentOS):
 
 `<` - move sort field left  
 `>` - move sort field right  
@@ -84,4 +84,16 @@ top -o mem
 
 ---
 
+##### SSH
 
+- To set up SSH public-key authentication to connect to a remote server:
+
+```
+scp ~/.ssh/id_rsa.pub username@server:
+ssh username@server
+cat id_rsa.pub >> ~/.ssh/authorized_keys
+cat ~/.ssh/authorized_keys
+rm id_rsa.pub
+exit
+ssh username@server
+```
