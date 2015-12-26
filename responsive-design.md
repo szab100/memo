@@ -1,4 +1,4 @@
-## Responsive Web Design
+## :scissors: Responsive Web Design
 
 #### Set viewport
 
@@ -44,7 +44,7 @@ nav a, button {
 - source code for mobile-first 3-columns layout with full-width header and footer, implemented using flexbox:  
 [https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html](https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html)
 
-- view the responsiveness of the above html page in a browser:  
+- :computer: view the responsiveness of the above html page in a browser:  
 [http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html](http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-flexbox-holy-grail.html)
 
 ---
@@ -53,7 +53,7 @@ nav a, button {
 - source code for mobile-first off-canvas drawer layout:  
 [https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html](https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html)
 
-- view the responsiveness of the above html page in a browser:  
+- :computer: view the responsiveness of the above html page in a browser:  
 [http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html](http://htmlpreview.github.io/?https://github.com/moodcheerful/memo/blob/master/responsive-design-off-canvas.html)
 
 ---
@@ -84,7 +84,7 @@ nav a, button {
 	@media all and (max-width: 500px){
 		/* stop table behavior */
 		table, thead, tbody, th, td, tr {
-			display: block;	
+			display: block;
 		}
 		/* hide table header */
 		thead tr {
@@ -105,7 +105,7 @@ nav a, button {
 			font-weight: bold;
 		}
 	}
-	```	
+	```
 	```html
 	<table>
 		<thead></thead>
@@ -167,9 +167,12 @@ nav a, button {
 	```
 
 ---
-#### Responsive images
 
-- use `calc`: example of spacing 3 images across the viewport:
+## :art: Responsive images
+
+#### Use `calc`:
+
+- example of spacing 3 images across the viewport:
 
 	```css
 	img {
@@ -182,41 +185,58 @@ nav a, button {
 	}
 	```
 
-- viewport units: `vh`, `vw`, `vmin = min(vh, vw)`, `vmax = max(vh, vw)`
+---
+
+#### Viewport units:
+
+- `vh`, `vw`, `vmin = min(vh, vw)`, `vmax = max(vh, vw)`
 
 	```css
-	img { 
-		max-height: 100vh; 
+	img {
+		max-height: 100vh;
 	}
 	```
 
-- raster: use `jpeg`; vector: use `svg`, or `png` if no `svg`, but not `gif`
+---
 
-- caption:
+#### File formats:
 
-	```html
-	<figure>
-		<img src="path/to/image.jpg">
-		<figcaption>here is the caption</figcaption>
-	</figure>
-	```
+- raster: use `jpeg`
+- vector: use `svg`, or `png` if no `svg`, but not `gif`
 
-- conditionally load device-specific images for large screens only:
+---
 
-	```css
-	@media (max-width: 500px) {
-	   .image {
-	      background-image: none;
-	   }
-	}
-	@media (min-width: 501px) {
-	   .image {
-	      background-image: url(image.jpg);
-	   }
-	}
-	```
+#### Caption:
 
-- glyphs: [Unicode character sets](http://unicode-table.com/en/sets/)
+```html
+<figure>
+	<img src="path/to/image.jpg">
+	<figcaption>here is the caption</figcaption>
+</figure>
+```
+
+---
+
+#### Conditionally load device-specific images for large screens only:
+
+```css
+@media (max-width: 500px) {
+   .image {
+      background-image: none;
+   }
+}
+@media (min-width: 501px) {
+   .image {
+      background-image: url(image.jpg);
+   }
+}
+```
+
+---
+
+#### Glyphs:
+
+- [Unicode character sets](http://unicode-table.com/en/sets/)
 
 	```html
 	<head>
@@ -233,76 +253,83 @@ nav a, button {
 	</body>
 	```
 
-- CSS icon fonts:
-	- [We Love Icon Fonts](http://weloveiconfonts.com/)
-	- [Font Awesome:](http://fortawesome.github.io/Font-Awesome/)
+---
 
-		```html
-		<head>
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-			<style type="text/css">
-				.fa {
-					color: red;
-				}
-			</style>
-		</head>
-		<body>
-			<i class="fa fa-youtube-play"></i>
-		</body>
-		```
+#### CSS icon fonts:
 
-	- [Zocial:](http://zocial.smcllns.com/)
+- [We Love Icon Fonts](http://weloveiconfonts.com/)
+- [Font Awesome:](http://fortawesome.github.io/Font-Awesome/)
 
-		```html
-		<!doctype html>
-		<html>
-		<head>
-			<meta name="viewport" content="width=device-width, initial-scale=1">
-			<style type="text/css">
-				@import url(http://weloveiconfonts.com/api/?family=zocial);
+	```html
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<style type="text/css">
+			.fa {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<i class="fa fa-youtube-play"></i>
+	</body>
+	```
 
-				[class*="zocial-"]:before {
-					display: inline-block;
-					font-family: 'zocial', sans-serif;
-					text-shadow: 3px 3px 3px #aaa;
-					width: 1.75em;
-				}
-			</style>
-		</head>
-		<body>
-			<p class="zocial-facebook">Sign in with Facebook</p>
-			<p class="zocial-twitter">Follow me on Twitter</p>
-			<p class="zocial-amazon">Buy at Amazon</p>
-			<p class="zocial-skype">Skype me</p>
-			<p class="zocial-dropbox">Sync with Dropbox</p>
-			<p class="zocial-reddit">Share on Reddit</p>
-		</body>
-		</html>
-		```
+- [Zocial:](http://zocial.smcllns.com/)
 
-- `srcset`
+	```html
+	<!doctype html>
+	<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			@import url(http://weloveiconfonts.com/api/?family=zocial);
 
-	- device pixel ratio:
+			[class*="zocial-"]:before {
+				display: inline-block;
+				font-family: 'zocial', sans-serif;
+				text-shadow: 3px 3px 3px #aaa;
+				width: 1.75em;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="zocial-facebook">Sign in with Facebook</p>
+		<p class="zocial-twitter">Follow me on Twitter</p>
+		<p class="zocial-amazon">Buy at Amazon</p>
+		<p class="zocial-skype">Skype me</p>
+		<p class="zocial-dropbox">Sync with Dropbox</p>
+		<p class="zocial-reddit">Share on Reddit</p>
+	</body>
+	</html>
+	```
+
+---
+
+#### srcset
+
+- device pixel ratio:
 
 	```html
 	<img src="image_2x.jpg" srcset="image_2x.jpg 2x, image_1x.jpg 1x" alt="Name">
 	```
 
-	- image size:
+- image size:
 
 	```html
 	<img src="large.jpg" srcset="small.jpg 400w, medium.jpg 800w, large.jpg 1020w" alt="Name">
 	```
 
-	- srcset with sizes:
+- srcset with sizes:
 
 	```html
 	<img src="pic_800.jpg" sizes="(max-width: 400px) 100vw, (min-width: 401px) 50vw" srcset="pic_400.jpg 400w, pic_800.jpg 800w" alt="Name">
 	```
 
-- `<picture>` element:
+---
 
-	- with media attribute:
+#### `<picture>` element:
+
+- with media attribute:
 
 	```html
 	<picture>
@@ -312,7 +339,7 @@ nav a, button {
 	</picture>
 	```
 
-	- with type attribute:
+- with type attribute:
 
 	```html
 	<picture>
@@ -321,7 +348,7 @@ nav a, button {
 	</picture>
 	```
 
-	- with device pixel ratio:
+- with device pixel ratio:
 
 	```html
 	<picture>
@@ -331,5 +358,27 @@ nav a, button {
 	</picture>
 	```
 
+---
 
+#### ImageMagick:
 
+- install ImageMagick: `brew install imagemagick`
+
+- `convert` options summary:
+<http://www.imagemagick.org/script/convert.php>
+
+- run `convert.sh` script to resize an image:
+```
+#!/bin/bash
+
+SRC="$1"
+LOW=60
+convert $SRC.jpg -quality $LOW "$SRC"_low.jpg
+convert $SRC.jpg -quality $LOW -resize 50% "$SRC"_"$LOW"q_50pc.jpg
+
+# To run the script in a folder containing an image foo.jpg:
+# bash convert.sh foo
+# or
+# chmod u+x convert.sh
+# ./convert.sh foo
+```
