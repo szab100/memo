@@ -1,38 +1,99 @@
-
-__The Java Class File Disassembler:__
+#### Java class file disassembler:
 
 `javap -c Foo.class` will show the disassembly of Foo.class.
 
 ---
 
-__String concatenation:__
+#### java.io
 
-```java
-	a += b
-```
+- IO Stream is a conceptually endless flow of data.   
+- Streams in java.io are either byte based (reading and writing bytes) or character based (reading and writing characters).
+- Summary of main java.io classes:
 
-is the equivalent of
-
-```java
-	a = new StringBuilder().append(a).append(b).toString();
-```
-
----
-
-__String's natural ordering:__
-
-The successor of a string s in String's natural ordering is `s + "\0"`, which is `s` with a null character appended.
-
-```java
-	String[] wordArray = {"included", "j", "aaa"};
-	SortedSet<String> dictionary = new TreeSet<String>(Arrays.asList(wordArray));
-	System.out.println(dictionary.subSet("a", "included\0"));
-```
-The code above will output: `[aaa, included]`
+&nbsp; | Byte Based </br> Input | Byte Based </br> Output | Character Based </br> Input | Character Based </br> Output
+:---: | :---:| :---: | :---: | :---:
+Abstract | InputStream | OutputStream | Reader | Writer
+Byte/Character bridge |  |  | InputStreamReader | OutputStreamWriter
+Arrays | ByteArrayInputStream | ByteArrayOutputStream | CharArrayReader | CharArrayWriter
+Files | FileInputStream </br> RandomAccessFile | FileOutputStream </br> RandomAccessFile | FileReader | FileWriter
+Pipes | PipedInputStream | PipedOutputStream | PipedReader | PipedWriter
+Buffering | BufferedInputStream | BufferedOutputStream | BufferedReader | BufferedWriter
+Filtering | FilterInputStream | FilterOutputStream | FilterReader | FilterWriter
+Parsing | PushbackInputStream </br> StreamTokenizer |  | PushbackReader </br> LineNumberReader |
+Strings |  |  | StringReader | StringWriter
+Data | DataInputStream | DataOutputStream |  |
+Formatted Data |  | PrintStream |  | PrintWriter
+Objects | ObjectInputStream | ObjectOutputStream |  |
+Utilities | SequenceInputStream |  |  |
 
 ---
 
-__Method Overloading vs. Overriding:__  
+#### Bitwise and Bit Shift operators
+
+Operator | Bitwise Operation
+:--- | :---
+~      | Unary bitwise complement
+<<     | Signed left shift
+>>     | Signed right shift
+>>>    | Unsigned right shift
+&      | Bitwise AND
+&#124;      | Bitwise inclusive OR
+^      | Bitwise exclusive OR
+
+
+& | &#124; | ^
+:---: | :---: | :---:
+0 & 0 = 0 | 0 &#124; 0 = 0 | 0 ^ 0 = 0
+1 & 0 = 0 | 1 &#124; 0 = 1 | 1 ^ 0 = 1
+0 & 1 = 0 | 0 &#124; 1 = 1 | 0 ^ 1 = 1
+1 & 1 = 1 | 1 &#124; 1 = 1 | 1 ^ 1 = 0
+
+
+& | &#124; | ^
+:---: | :---: | :---:
+x & 0 = 0 | x &#124; 0 = x | x ^ 0 = x
+x & (-1) = x | x &#124; (-1) = -1 | x ^ (-1) = ~x
+x & x = x | x &#124; x = x | x ^ x = 0
+
+
+- Left shift:  
+  `(n << s) == n * Math.pow(2, s)`
+
+- Right shifts:
+	- the __unsigned__ (or logical) right shift operator `>>>` inserts a 0 into the leftmost bit (most significant bit):  
+	`-1 >>> 31 == 1`
+	- the leftmost bit inserted by the __signed__ right shift operator `>>` depends on sign extension (0 for positive n and 1 for negative n):  
+	`-1 >> 1 == -1`
+	- the __signed__ right shift operator `>>` for negative integers is NOT equal to division by 2:  
+	`-3 / 2 = -1`, whereas `-3 >> 1 = -2`
+	- if n >= 0:  
+    `(n >> s) == (int)(n / Math.pow(2, s))`  
+    `(n >>> s) == (n >> s)`
+	- if n < 0:  
+    `(n >> s) == Math.floor(n / Math.pow(2, s))`  
+    `(n >>> s) == (n >> s) + (2 << ~s)`
+
+---
+
+#### The 2's Complement
+
+The 2's complement of an N-bit number is the complement with respect to 2<sup>N</sup>, i.e. the result of subtracting the number from 2<sup>N</sup>. The 2's complement of a number behaves like the arithmetic negative of the original number.
+
+To calculate the 2's complement of a binary number:
+
+1. invert the bits by flipping 1s to 0s and 0s to 1s (the unary bitwise complement operation (~), also called 1's complement)
+2. then add 1 (ignoring the overflow)
+
+For example, using 1 byte (8 bits), the 2's complement of 5<sub>10</sub> = 0000 0101<sub>2</sub> is 1111 1011<sub>2</sub> = -5<sub>10</sub>:
+
+1. ~(0000 0101) = 1111 1010
+2. 1111 1010 + 1 = 1111 1011
+
+The 2's complement of 0 is 0: inverting gives all 1s, and adding 1 changes the 1s back to 0s (since the overflow is ignored).
+
+---
+
+#### Method Overloading vs. Overriding  
 
 - Method **Overloading**:
 	- Method with same name co-exists in same class, but they must have different method signatures.
@@ -47,7 +108,7 @@ __Method Overloading vs. Overriding:__
 
 ---
 
-__Implementing `equals()` and `hashCode()` override:__
+#### Implementing `equals()` and `hashCode()` override:
 
 ```java
 public class Person implements Comparable<Person> {
@@ -97,7 +158,7 @@ public class Person implements Comparable<Person> {
 
 ---
 
-__IntegerCache, ShortCache, ByteCache, CharacterCache__
+#### IntegerCache, ShortCache, ByteCache, CharacterCache
 
 The `Integer` class has a static cache, that stores 256 `Integer` objects.  
 
@@ -110,68 +171,29 @@ Two autoboxing conversions of a primitive value p will yield an identical refere
 
 ---
 
+#### String concatenation:
 
-### Bitwise and Bit Shift operators
+```java
+	a += b
+```
 
-Operator | Bitwise Operation
-:--- | :---
-~      | Unary bitwise complement
-<<     | Signed left shift
->>     | Signed right shift
->>>    | Unsigned right shift
-&      | Bitwise AND
-&#124;      | Bitwise inclusive OR
-^      | Bitwise exclusive OR
+is the equivalent of
 
-
-& | &#124; | ^
-:---: | :---: | :---:
-0 & 0 = 0 | 0 &#124; 0 = 0 | 0 ^ 0 = 0
-1 & 0 = 0 | 1 &#124; 0 = 1 | 1 ^ 0 = 1
-0 & 1 = 0 | 0 &#124; 1 = 1 | 0 ^ 1 = 1
-1 & 1 = 1 | 1 &#124; 1 = 1 | 1 ^ 1 = 0
-
-
-& | &#124; | ^
-:---: | :---: | :---:
-x & 0 = 0 | x &#124; 0 = x | x ^ 0 = x
-x & (-1) = x | x &#124; (-1) = -1 | x ^ (-1) = ~x
-x & x = x | x &#124; x = x | x ^ x = 0
-
-
-- Left shift:  
-  `(n << s) == n * Math.pow(2, s)`
-
-- Right shifts:
-	- the __unsigned__ (or logical) right shift operator `>>>` inserts a 0 into the leftmost bit (most significant bit):  
-	`-1 >>> 31 == 1`
-	- the leftmost bit inserted by the __signed__ right shift operator `>>` depends on sign extension (0 for positive n and 1 for negative n):  
-	`-1 >> 1 == -1`
-	- the __signed__ right shift operator `>>` for negative integers is NOT equal to division by 2:  
-	`-3 / 2 = -1`, whereas `-3 >> 1 = -2`
-	- if n >= 0:  
-    `(n >> s) == (int)(n / Math.pow(2, s))`  
-    `(n >>> s) == (n >> s)`
-	- if n < 0:  
-    `(n >> s) == Math.floor(n / Math.pow(2, s))`  
-    `(n >>> s) == (n >> s) + (2 << ~s)`
+```java
+	a = new StringBuilder().append(a).append(b).toString();
+```
 
 ---
 
-### The 2's Complement
+#### String's natural ordering:
 
-The 2's complement of an N-bit number is the complement with respect to 2<sup>N</sup>, i.e. the result of subtracting the number from 2<sup>N</sup>. The 2's complement of a number behaves like the arithmetic negative of the original number.
+The successor of a string s in String's natural ordering is `s + "\0"`, which is `s` with a null character appended.
 
-To calculate the 2's complement of a binary number:
+```java
+	String[] wordArray = {"included", "j", "aaa"};
+	SortedSet<String> dictionary = new TreeSet<String>(Arrays.asList(wordArray));
+	System.out.println(dictionary.subSet("a", "included\0"));
+```
+The code above will output: `[aaa, included]`
 
-1. invert the bits by flipping 1s to 0s and 0s to 1s (the unary bitwise complement operation (~), also called 1's complement)
-2. then add 1 (ignoring the overflow)
 
-For example, using 1 byte (8 bits), the 2's complement of 5<sub>10</sub> = 0000 0101<sub>2</sub> is 1111 1011<sub>2</sub> = -5<sub>10</sub>:
-
-1. ~(0000 0101) = 1111 1010
-2. 1111 1010 + 1 = 1111 1011
-
-The 2's complement of 0 is 0: inverting gives all 1s, and adding 1 changes the 1s back to 0s (since the overflow is ignored).
-
----
