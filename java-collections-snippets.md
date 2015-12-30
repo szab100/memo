@@ -106,7 +106,23 @@ To go one element backward from a specified interior object `obj` in a sorted se
 Object predecessor = sortedSet.headSet(obj).last();
 ```
 
+- __Reverse Order Comparator:__
 
+```java
+public class ReverseOrderComparator {
+	
+	public static final Comparator<Integer> REVERSE_ORDER = new Comparator<Integer>() {
+		public int compare(Integer e1, Integer e2) {
+			return (e1 < e2 ? 1 : (e1 == e2 ? 0 : -1));
+		}
+	};
 
+	public static void main(String[] args) {
+		Integer[] array = { Integer.MIN_VALUE, Integer.MAX_VALUE, 0 };
+		Arrays.sort(array, REVERSE_ORDER);
+		System.out.println(Arrays.toString(array));
+	}
+}
+```
 
  	
