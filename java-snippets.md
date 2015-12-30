@@ -196,4 +196,17 @@ The successor of a string s in String's natural ordering is `s + "\0"`, which is
 ```
 The code above will output: `[aaa, included]`
 
+---
+
+#### Parity test
+
+- Warning: for negative odd integers `(x % 2) == 1` will return false,  
+since the remainder will be -1, not 1: `(-3 % 2) == -1`.  
+- Test for "not equal to zero" instead:
+
+```java
+	public static boolean isOdd(int x) {
+		return (x % 2) != 0;
+	}
+```
 
