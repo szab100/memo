@@ -84,7 +84,7 @@ top -o mem
 
 ---
 
-##### SSH
+##### :key: SSH
 
 - To set up SSH public-key authentication to connect to a remote server:
 
@@ -96,4 +96,14 @@ cat ~/.ssh/authorized_keys
 rm id_rsa.pub
 exit
 ssh username@server
+```
+
+---
+
+##### :key: ROT13 cipher 
+
+- with `tr` translate characters command:
+
+```bash
+echo "The Quick Brown Fox Jumps Over The Lazy Dog" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 ```
