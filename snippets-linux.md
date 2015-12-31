@@ -1,6 +1,6 @@
 ##### Disk:
 
-- Find a file (recursive): `find /usr/share/cacti -name '*.sql'`
+- Find a file (recursive): `find / -iname '*.sql'`
 - Copy with modification time: `rsync -t sourceFile.txt destPath`
 - Copy with modification time and owner/group: `rsync -a sourceFile.txt destPath`
 - Make a backup of files in folder: `	rsync -arv inwar/ inwar-bak/`
@@ -33,7 +33,7 @@
 		`usermod -a -G sudo <username>`
 	- on CentOS:
 
-		```
+		```bash
 		groupadd sudo
 		visudo and add: %sudo ALL=(ALL) ALL
 		usermod -a -G sudo <username>
@@ -69,18 +69,18 @@
 
 - Linux (CentOS):
 
-`<` - move sort field left  
-`>` - move sort field right  
-`O` - to select the sort field  
-`n` - to sort by _memory_ usage  
-`k` - to sort by _CPU_ usage  
+	`<` - move sort field left  
+	`>` - move sort field right  
+	`O` - to select the sort field  
+	`n` - to sort by _memory_ usage  
+	`k` - to sort by _CPU_ usage  
 
 - OS X:
 
-```
-top -o cpu
-top -o mem
-```
+	```bash
+	top -o cpu
+	top -o mem
+	```
 
 ---
 
@@ -88,15 +88,15 @@ top -o mem
 
 - To set up SSH public-key authentication to connect to a remote server:
 
-```
-scp ~/.ssh/id_rsa.pub username@server:
-ssh username@server
-cat id_rsa.pub >> ~/.ssh/authorized_keys
-cat ~/.ssh/authorized_keys
-rm id_rsa.pub
-exit
-ssh username@server
-```
+	```bash
+	scp ~/.ssh/id_rsa.pub username@server:
+	ssh username@server
+	cat id_rsa.pub >> ~/.ssh/authorized_keys
+	cat ~/.ssh/authorized_keys
+	rm id_rsa.pub
+	exit
+	ssh username@server
+	```
 
 ---
 
@@ -104,7 +104,7 @@ ssh username@server
 
 - with `tr` translate characters command:
 
-```bash
-# Map upper case A-Z to N-ZA-M and lower case a-z to n-za-m
-echo "The Quick Brown Fox Jumps Over The Lazy Dog" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-```
+	```bash
+	# Map upper case A-Z to N-ZA-M and lower case a-z to n-za-m
+	echo "The Quick Brown Fox Jumps Over The Lazy Dog" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+	```
