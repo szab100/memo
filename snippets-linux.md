@@ -105,5 +105,6 @@ ssh username@server
 - with `tr` translate characters command:
 
 ```bash
+# Map upper case A-Z to N-ZA-M and lower case a-z to n-za-m
 echo "The Quick Brown Fox Jumps Over The Lazy Dog" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 ```
