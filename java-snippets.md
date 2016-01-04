@@ -93,6 +93,201 @@ The 2's complement of 0 is 0: inverting gives all 1s, and adding 1 changes the 1
 
 ---
 
+#### Precedence and associativity of Java operators
+
+Java operators, from highest to lowest precedence, along with their associativity:
+
+<table cellspacing="1" cellpadding="5" border="0">
+<tbody><tr align="center">
+<th>Operator</th>
+<th>Description</th>
+<th>Level</th>
+<th>Associativity</th>
+</tr>
+
+<tr align="center">
+<td>
+<code>[]</code><br>
+<code>.</code><br>
+<code>()</code><br>
+<code>++</code><br>
+<code>--</code>
+</td>
+<td>
+access array element<br>
+access object member<br>
+invoke a method<br>
+post-increment<br>
+post-decrement
+</td>
+<td>1</td>
+<td>left to right</td>
+</tr>
+
+<tr align="center">
+<td>
+<code>++</code><br>
+<code>--</code><br>
+<code>+</code><br>
+<code>-</code><br>
+<code>!</code><br>
+<code>~</code>
+</td>
+<td>
+pre-increment<br>
+pre-decrement<br>
+unary plus<br>
+unary minus<br>
+logical NOT<br>
+bitwise NOT
+</td>
+<td>2</td>
+<td>right to left</td>
+</tr>
+
+<tr align="center">
+<td>
+<code>()</code><br>
+<code>new</code>
+</td>
+<td>
+cast<br>
+object creation
+</td>
+<td>3</td>
+<td>right to left</td>
+</tr>
+
+<tr align="center">
+<td>
+<code>*</code><br>
+<code>/</code><br>
+<code>%</code>
+</td>
+<td>
+multiplicative
+</td>
+<td>4</td>
+<td>left to right</td>
+</tr>
+
+
+<tr align="center">
+<td>
+<code>+</code> <code>-</code><br>
+<code>+</code>
+</td>
+<td>
+additive<br>
+string concatenation
+</td>
+<td>5</td>
+<td>left to right</td>
+</tr>
+
+<tr align="center">
+<td>
+<code>&lt;&lt;</code> <code>&gt;&gt;</code><br>
+<code>&gt;&gt;&gt;</code>
+</td>
+<td>
+shift
+</td>
+<td>6</td>
+<td>left to right</td>
+</tr>
+
+<tr align="center">
+<td>
+<code>&lt;</code> <code>&lt;=</code><br>
+<code>&gt;</code> <code>&gt;=</code><br>
+<code>instanceof</code>
+</td>
+<td>
+relational<br>
+type comparison
+</td>
+<td>7</td>
+<td>left to right</td>
+</tr>
+
+
+<tr align="center">
+<td>
+<code>==</code><br>
+<code>!=</code>
+</td>
+<td>
+equality
+</td>
+<td>8</td>
+<td>left to right</td>
+</tr>
+
+<tr align="center">
+<td><code>&amp;</code></td>
+<td>bitwise AND</td>
+<td>9</td>
+<td>left to right</td>
+</tr>
+
+<tr align="center">
+<td><code>^</code></td>
+<td>bitwise XOR</td>
+<td>10</td>
+<td>left to right</td>
+</tr>
+
+<tr align="center">
+<td><code>|</code></td>
+<td>bitwise OR</td>
+<td>11</td>
+<td>left to right</td>
+</tr>
+
+<tr align="center">
+<td><code>&amp;&amp;</code></td>
+<td>conditional AND</td>
+<td>12</td>
+<td>left to right</td>
+</tr>
+
+<tr align="center">
+<td><code>||</code></td>
+<td>conditional OR</td>
+<td>13</td>
+<td>left to right</td>
+</tr>
+
+<tr align="center">
+<td><code>?:</code></td>
+<td>conditional</td>
+<td>14</td>
+<td>right to left</td>
+</tr>
+
+<tr align="center">
+<td>
+<code> =</code> <code>+=</code> <code>-=</code><br>
+<code>*=</code> <code>/=</code> <code>%=</code><br>
+<code>&amp;=</code> <code>^=</code> <code>|=</code><br>
+<code>&lt;&lt;=</code> <code>&gt;&gt;=</code> <code>&gt;&gt;&gt;=</code>
+</td>
+<td align="">
+assignment
+</td>
+<td>15</td>
+<td>right to left</td>
+</tr>
+
+</tbody></table>
+
+Associativity:
+- `x = y = z = 17` is treated as `x = (y = (z = 17))`, since the `=` operator has right-to-left associativity.  
+- `72 / 2 / 3` is treated as `(72 / 2) / 3`, since the `/` operator has left-to-right associativity.
+
+---
+
 #### Method Overloading vs. Overriding  
 
 - Method **Overloading**:
@@ -209,4 +404,3 @@ since the remainder will be -1, not 1: `(-3 % 2) == -1`.
 		return (x % 2) != 0;
 	}
 ```
-
