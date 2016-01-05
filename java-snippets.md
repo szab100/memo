@@ -93,6 +93,47 @@ The 2's complement of 0 is 0: inverting gives all 1s, and adding 1 changes the 1
 
 ---
 
+#### :floppy_disk: Memory Usage in Java (on a 64-bit machine).
+
+- Primitive types: 
+
+	type  | bytes
+	:---: | :---:
+	boolean | 1
+	byte | 1
+	char | 2
+	int | 4
+	long | 8
+	float | 4
+	double | 8
+
+- References:  
+8 bytes for a memory address (on a 64-bit machine)
+
+- Objects:  
+16 bytes overhead +
+memory used by each instance variable, padded to a multiple of 8 bytes
+
+	For example, Integer wrapper object:  
+	24 bytes = 16 bytes overheard + 4 bytes int + padding to a multiple of 8
+
+- Arrays:  
+24 bytes header (16 bytes object overhead + 4 bytes for the length + 4 bytes padding) + memory needed to store the values
+
+	type  | bytes
+	:---: | :---:
+	boolean[] | ~N
+	int[] | ~4N
+	double[] | ~8N
+
+- Strings:  
+56 + 2N bytes = 32 bytes (for the String object) + (24 + 2N) bytes (for the char[] array in a string of length N)
+
+- Linked List node object (inner class):  
+48 bytes = 16 bytes object overhead + 8 bytes extra overhead for a reference to the enclosing instance + 2 * 8 bytes for references to next/previous node + 8 bytes reference to a node data
+
+---
+
 #### Precedence and associativity of Java operators
 
 Java operators, from highest to lowest precedence, along with their associativity:
