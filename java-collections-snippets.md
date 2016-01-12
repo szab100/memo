@@ -39,7 +39,7 @@ Unlike `ListIterator`, `Iterator` allows you to delete elements, but not to repl
 - __To iterate over the keys in a `Map`:__
 
 ```java
-	for (KeyType key: map.keySet()){
+	for (K key: map.keySet()){
 		System.out.println(key);
 	}
 ```
@@ -47,7 +47,7 @@ Unlike `ListIterator`, `Iterator` allows you to delete elements, but not to repl
 - __To iterate over the keys in a `Map` with an `Iterator`:__
 
 ```java
-	Iterator<KeyType> it = map.keySet().iterator();
+	Iterator<K> it = map.keySet().iterator();
 	while (it.hasNext()) {
 		System.out.println(it.next());
 	}
@@ -56,7 +56,7 @@ Unlike `ListIterator`, `Iterator` allows you to delete elements, but not to repl
 - __To iterate over key-value pairs in a `Map`:__
 
 ```java
-	for (Map.Entry<KeyType, ValueType> el: map.entrySet()) {
+	for (Map.Entry<K, V> el: map.entrySet()) {
 		System.out.println(el.getKey() + ": " + el.getValue());
 	}
 ```
