@@ -1,5 +1,8 @@
 ### Eclipse shortcuts
 
+- <kbd>⌘</kbd> + <kbd>fn</kbd> + <kbd>F11</kbd>  
+Run the current opened java class if main method exists, or else run the last launched application.
+
 - <kbd>⌘</kbd> + <kbd>O</kbd>  
 Go directly to a member (variable, method) of the current class file.  
 Pressing <kbd>⌘</kbd> + <kbd>O</kbd> again shows the inherited members of the super classes.
