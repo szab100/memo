@@ -74,7 +74,7 @@ sudo ifconfig awdl0 up
 
 - pbcopy (pasteboard copy) - to pipe the output of the command to the OS X clipboard:
 ```
-ls | pbcopy
+cat ~/.ssh/id_rsa.pub | pbcopy
 ```
 
 - pbpaste (pasteboard paste)
