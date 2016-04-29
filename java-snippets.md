@@ -95,17 +95,17 @@ The 2's complement of 0 is 0: inverting gives all 1s, and adding 1 changes the 1
 
 #### :floppy_disk: Memory Usage in Java (on a 64-bit machine).
 
-- Primitive types: 
+- Primitive types:
 
-	type  | bytes
-	:---: | :---:
-	boolean | 1
-	byte | 1
-	char | 2
-	int | 4
-	long | 8
-	float | 4
-	double | 8
+type  | bytes
+:---: | :---:
+boolean | 1
+byte | 1
+char | 2
+int | 4
+long | 8
+float | 4
+double | 8
 
 - References:  
 8 bytes for a memory address (on a 64-bit machine)
@@ -120,11 +120,11 @@ memory used by each instance variable, padded to a multiple of 8 bytes
 - Arrays:  
 24 bytes header (16 bytes object overhead + 4 bytes for the length + 4 bytes padding) + memory needed to store the values
 
-	type  | bytes
-	:---: | :---:
-	boolean[] | ~N
-	int[] | ~4N
-	double[] | ~8N
+type  | bytes
+:---: | :---:
+boolean[] | ~N
+int[] | ~4N
+double[] | ~8N
 
 - Strings:  
 56 + 2N bytes = 32 bytes (for the String object) + (24 + 2N) bytes (for the char[] array in a string of length N)
