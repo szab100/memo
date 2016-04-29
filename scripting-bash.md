@@ -18,7 +18,7 @@ To read the value of a variable.
 - Quotes `"` `'`  
 Double quotes will do variable substitution, single quotes will not.
 - `variable=$( command )`  
-Save the output of a command into a variable.
+Command substitution: save the output of a command into a variable.
 - `export var1`  
 Make the variable var1 available to child processes.
 - Formatting: the presence or absence of spaces is important.
@@ -30,7 +30,7 @@ __Special Variables:__
 - `$1` - `$9` - The first 9 arguments to the Bash script.
 - `$#` - How many arguments were passed to the Bash script.
 - `$@` - All the arguments supplied to the Bash script.
-- `$?` - The exit status of the most recently run process.
+- `$?` - The exit status of the most recently run process (command or function).
 - `$$` - The process ID of the current script.
 - `$USER` - The username of the user running the script.
 - `$HOSTNAME` - The hostname of the machine the script is running on.
@@ -41,11 +41,19 @@ __Special Variables:__
 ### User Input
 
 - Command line arguments (accessed with `$1`, `$2`, ...)  
-- Read input during script execution:  
-	`read varName`  
-	Read input from the user and store it in the variable `varName`.  
+- Ask the user for input:  
+
+  `read` command is used to read input from the user interactively during script execution.  
   Two commonly used options are `-p` to specify a prompt and `-s` to make the input silent.  
-- Read from STDIN:    
+
+  ```bash
+  # Ask the user for login details:
+  read -p 'Username: ' uservar
+  read -sp 'Password: ' passvar
+	```
+
+- Redirected from __STDIN__:    
+
   Bash accommodates piping and redirection by way of special files. Each process gets its own set of files (one for STDIN, STDOUT and STDERR respectively) and they are linked when piping or redirection is invoked.  
   `/dev/stdin` is a file you can read to get the STDIN for the Bash script.  
   Then accept data via piping: `command | ./script.sh` or redirection: `./script.sh < datafile`.
@@ -166,7 +174,8 @@ INTEGER1 -lt INTEGER2 | INTEGER1 is numerically less than INTEGER2
   ```
 
   - The list is a series of strings, separated by spaces: `'a b c'`.  
-  - The range is a series of numbers, with no spaces between the curly brackets: `{1..5}` or `{$startingValue..$endingValue..$valueToStepBy}`.
+  - The range is a series of numbers, with no spaces between the curly brackets: `{1..5}` or `{$startingValue..$endingValue..$valueToStepBy}`.  
+
 
 - `break`: exit the currently running loop.
 
@@ -198,7 +207,17 @@ INTEGER1 -lt INTEGER2 | INTEGER1 is numerically less than INTEGER2
 
 ### Functions
 
-- Creating a function:
+- Creating a function:  
+
+  The function definition must appear in the script before any calls to the function.
+
+  ```bash
+  function_name () {
+    <commands>
+  }
+  ```
+
+  or
 
   ```bash
   function function_name {
@@ -206,11 +225,64 @@ INTEGER1 -lt INTEGER2 | INTEGER1 is numerically less than INTEGER2
   }
   ```
 
-  or
+- Passing Arguments:  
 
-	```bash
-	function_name () {
-		<commands>
-	}
-	```
+  Unlike other programming languages, in Bash the parenthesis () in a function declaration are there only for decoration and are never used to put arguments inside them. Instead the arguments are accessible within the function as $1, $2, etc:
 
+  ```bash
+  #!/bin/bash
+  # Passing arguments to a function:
+  test_function () {
+    echo $1 $2
+  }
+  test_function arg1 arg2
+  ```
+
+- Return Values:  
+
+  - Unlike other programming languages, Bash functions do not return a value, but a return status.  
+  Use `return <value>` to exit the function with a return status of value:
+
+    ```bash
+    #!/bin/bash
+    # Setting a return status for a function:
+    test_function () {
+      return 5
+    }
+    test_function
+    echo The previous function has a return status of $?
+    ```
+
+  - Use command substitution to take what would normally be printed to the screen by a function and assign it to the variable:
+
+    ```bash
+    #!/bin/bash
+    # Setting a return value to a function:
+    lines_in_file () {
+      wc -l < $1
+    }
+    num_lines=$( lines_in_file $1 )
+    echo The file $1 has $num_lines lines in it.
+    ```
+
+- Variable Scope:
+
+  - By default a variable is global.
+  - Best practice is to create a local variable within a function:
+
+    ```bash
+    local var_name=<var_value>
+    ```
+
+- Overriding Commands:  
+
+  `command <command>` is used to run the command with that name as opposed to the function with the same name in order not to end up in an endless loop when called from within a function:
+
+  ```bash
+  #!/bin/bash
+  # Create a wrapper around the command ls:
+  ls () {
+    command ls -la
+  }
+  ls
+  ```
