@@ -1,11 +1,11 @@
-###Java Collections Framework implementations
+### Java Collections Framework implementations
 ---
 
-####Set Implementations
+#### Set Implementations
 
-There are 3 general-purpose `Set` implementations: 
+There are 3 general-purpose `Set` implementations:
 
-- **HashSet** 
+- **HashSet**
 	- stores its elements in `HashMap<E, Object>`
 	- the best-performing implementation
 	- however it makes no guarantees about the order of iteration
@@ -28,7 +28,7 @@ Deletion (remove) | O(1) | O(1) | O(log n)
 Search (contains) | O(1) | O(1) | O(log n)
 Iteration (next) | O(h/n) | O(1) | O(log n)
 Positional Access (get) | no | no | no
-Order | no guarantee | insertion-order | sorted | 
+Order | no guarantee | insertion-order | sorted
 Interfaces | Set | Set | Set, SortedSet
 Implementation | HashMap | LinkedHashMap | Red-Black Tree
 
@@ -36,9 +36,9 @@ Note: h is the HashSet capacity (number of buckets in a HashMap that's backing i
 
 ---
 
-####List Implementations
+#### List Implementations
 
-There are 2 general-purpose `List` implementations: 
+There are 2 general-purpose `List` implementations:
 
 - **ArrayList**
 	- implemented as a resizable array
@@ -66,12 +66,12 @@ Search: `contains(E element)` | O(n) | O(n)
 Iteration: `ListIterator.next()` | O(1) | O(1)
 Order | insertion-order | insertion-order
 Interface | List | List, Deque
-Implementation | resizable array | doubly-linked list 
+Implementation | resizable array | doubly-linked list
 
 
 ---
 
-####Map Implementations
+#### Map Implementations
 
 There are 3 general-purpose `Map` implementations:
 
@@ -88,20 +88,20 @@ Insertion (put) | O(1) | O(1) | O(log n)
 Deletion (remove) | O(1) | O(1) | O(log n)
 Search (containsKey) | O(1) | O(1) | O(log n)
 Iteration (next) | O(h/n) | O(1) | O(log n)
-Order | no guarantee | insertion-order | sorted | 
-Null values/keys | allowed | allowed | only values 
+Order | no guarantee | insertion-order | sorted 
+Null values/keys | allowed | allowed | only values
 Interfaces | Map | Map | Map, SortedMap
 Implementation | buckets | double-linked buckets | Red-Black Tree
 
 
 ---
 
-####Queue Implementations
+#### Queue Implementations
 
 There are 2 general-purpose `Queue` implementations:
 
 - **LinkedList**: provides first in, first out (FIFO) queue operations
-- **PriorityQueue**: 
+- **PriorityQueue**:
 	- based on the heap data structure
 	- orders elements according to the order specified at construction time (natural ordering or an explicit `Comparator`)
 	- the *head* of the queue is the least element with respect to the specified ordering
@@ -109,17 +109,17 @@ There are 2 general-purpose `Queue` implementations:
 
 ---
 
-####Deque Implementations
+#### Deque Implementations
 
 There are 2 general-purpose `Deque` implementations:
 
-- **LinkedList**: 
+- **LinkedList**:
 	- more flexible
 	- implements all optional `List` operations
 	- `null` elements are allowed
-	- consumes more memory 
-	- not ideal to iterate 
-- **ArrayDeque**: 
+	- consumes more memory
+	- not ideal to iterate
+- **ArrayDeque**:
 	- the resizable array implementation
 	- more efficient than the `LinkedList` for add and remove operation at both ends
 	- to iterate use:
@@ -130,17 +130,17 @@ There are 2 general-purpose `Deque` implementations:
 
   | offer/add | peek/element | poll/remove
 :-:|:-:|:-:|:-:
-LinkedList | O(1) | O(1) | O(1) 
-PriorityQueue | O(log n) | O(1) | O(log n) 
-ArrayDeque | O(1) | O(1) | O(1) 
+LinkedList | O(1) | O(1) | O(1)
+PriorityQueue | O(log n) | O(1) | O(log n)
+ArrayDeque | O(1) | O(1) | O(1)
 
 ---
 
-####Bridge between array-based and collection-based APIs
+#### Bridge between array-based and collection-based APIs
 
-- `Arrays.asList()` 
+- `Arrays.asList()`
 	- `Arrays.asList(a)` method returns a `List` view of its array argument.
-	- Changes to the list write through to the array and vice versa. 
+	- Changes to the list write through to the array and vice versa.
 	- The size of the collection is the size of the array and cannot be changed (cannot call `add` or `remove` methods).
 	- A reference to the backing array is not retained.
 - `Collection.toArray()`
@@ -148,11 +148,3 @@ ArrayDeque | O(1) | O(1) | O(1)
 	`Object[] a = c.toArray();`
 
 ---
-
-
-
-
-
-
-
-
