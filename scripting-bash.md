@@ -74,9 +74,7 @@ print out the result of the expression
 - `$(( expression ))`  
 return the result of the expression
 - `${#var}`  
-return the length of the variable var
-- `${#variable}`  
-length of a variable (how many characters)
+return the length of the variable var (how many characters)
 
 ### If Statements
 
