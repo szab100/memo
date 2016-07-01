@@ -6,6 +6,7 @@ This repo is used as a personal tool with the goal of being more effective.
 	- :boom: [interfaces](java-collections-interfaces.md)
 	- :boom: [implementations and data structures time complexities](java-collections-implementations.md) :hourglass: 
 	- :boom: [collections snippets](java-collections-snippets.md)
+- Java Stream API
 - :boom: [Core Java](java-snippets.md):
 	- java.io
 	- bitwise operators
