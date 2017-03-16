@@ -21,7 +21,7 @@ There are 3 general-purpose `Set` implementations:
 
 **Set Implementations Time Complexity:**
 
-  | HashSet | LinkedHashSet | TreeSet |
+&nbsp; | HashSet | LinkedHashSet | TreeSet |
 :--- |:---:|:---:|:---:
 Insertion (add) | O(1) | O(1) | O(log n)
 Deletion (remove) | O(1) | O(1) | O(log n)
@@ -54,7 +54,7 @@ There are 2 general-purpose `List` implementations:
 
 **List Implementations Time Complexity:**
 
-  | ArrayList | LinkedList
+&nbsp; | ArrayList | LinkedList
 :--- |:---:|:---:
 Positional Access: `get(int index)` | **O(1)**  | O(n)
 Insertion: `add(E element)` | O(1) | O(1)
@@ -81,14 +81,14 @@ There are 3 general-purpose `Map` implementations:
 
 **Map Implementations Time Complexity:**
 
-  | HashMap | LinkedHashMap | TreeMap |
+&nbsp; | HashMap | LinkedHashMap | TreeMap |
 :--- |:---:|:---:|:---:
 Positional Access (get) | O(1)  | O(1)  | O(log n)
 Insertion (put) | O(1) | O(1) | O(log n)
 Deletion (remove) | O(1) | O(1) | O(log n)
 Search (containsKey) | O(1) | O(1) | O(log n)
 Iteration (next) | O(h/n) | O(1) | O(log n)
-Order | no guarantee | insertion-order | sorted 
+Order | no guarantee | insertion-order | sorted
 Null values/keys | allowed | allowed | only values
 Interfaces | Map | Map | Map, SortedMap
 Implementation | buckets | double-linked buckets | Red-Black Tree
@@ -128,7 +128,7 @@ There are 2 general-purpose `Deque` implementations:
 
 **Queue and Deque Implementations Time Complexity:**
 
-  | offer/add | peek/element | poll/remove
+&nbsp; | offer/add | peek/element | poll/remove
 :-:|:-:|:-:|:-:
 LinkedList | O(1) | O(1) | O(1)
 PriorityQueue | O(log n) | O(1) | O(log n)
