@@ -37,7 +37,7 @@ Operator | Bitwise Operation
 `>>`     | Signed right shift
 `>>>`    | Unsigned right shift
 `&`      | Bitwise AND
-`|`      | Bitwise inclusive OR
+`\|`      | Bitwise inclusive OR
 `^`      | Bitwise exclusive OR
 
 
