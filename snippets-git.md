@@ -1,3 +1,9 @@
+##### Remove .gitignore matched files from all commits (Warning: rewrites history!)
+```
+git filter-branch -f --index-filter 'git ls-files -i --exclude-standard| xargs git rm --cached -q' -- --all
+```
+
+
 ##### To view git log as a tree:
 
 - You will need tree installed (`brew install tree`)
