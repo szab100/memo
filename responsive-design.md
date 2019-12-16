@@ -11,7 +11,7 @@
 ---
 #### max-width on elements
 
-```css`
+```css
 img, embed, object, video {
 	max-width: 100%;
 }

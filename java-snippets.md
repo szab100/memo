@@ -32,28 +32,29 @@ Utilities | SequenceInputStream |  |  |
 
 Operator | Bitwise Operation
 :--- | :---
-~      | Unary bitwise complement
-<<     | Signed left shift
->>     | Signed right shift
->>>    | Unsigned right shift
-&      | Bitwise AND
-&#124;      | Bitwise inclusive OR
-^      | Bitwise exclusive OR
+`~`      | Unary bitwise complement
+`<<`     | Signed left shift
+`>>`     | Signed right shift
+`>>>`    | Unsigned right shift
+`&`      | Bitwise AND
+`\|`      | Bitwise inclusive OR
+`^`      | Bitwise exclusive OR
 
 
-& | &#124; | ^
+AND | OR | XOR
 :---: | :---: | :---:
-0 & 0 = 0 | 0 &#124; 0 = 0 | 0 ^ 0 = 0
-1 & 0 = 0 | 1 &#124; 0 = 1 | 1 ^ 0 = 1
-0 & 1 = 0 | 0 &#124; 1 = 1 | 0 ^ 1 = 1
-1 & 1 = 1 | 1 &#124; 1 = 1 | 1 ^ 1 = 0
+`0 & 0 = 0` | `0 \| 0 = 0` | `0 ^ 0 = 0`
+`1 & 0 = 0` | `1 \| 0 = 1` | `1 ^ 0 = 1`
+`0 & 1 = 0` | `0 \| 1 = 1` | `0 ^ 1 = 1`
+`1 & 1 = 1` | `1 \| 1 = 1` | `1 ^ 1 = 0`
 
 
-& | &#124; | ^
+AND | OR | XOR
 :---: | :---: | :---:
-x & 0 = 0 | x &#124; 0 = x | x ^ 0 = x
-x & (-1) = x | x &#124; (-1) = -1 | x ^ (-1) = ~x
-x & x = x | x &#124; x = x | x ^ x = 0
+`x & 0 = 0` | `x \| 0 = x` | `x ^ 0 = x`
+`x & (-1) = x` | `x \| (-1) = -1` | `x ^ (-1) = ~x`
+`x & x = x` | `x \| x = x` | `x ^ x = 0`
+`x & (~x) = 0` | `x \| (~x) = 1` | `x ^ (~x) = 1`
 
 
 - Left shift:  
@@ -81,7 +82,7 @@ The 2's complement of an N-bit number is the complement with respect to 2<sup>N<
 
 To calculate the 2's complement of a binary number:
 
-1. invert the bits by flipping 1s to 0s and 0s to 1s (the unary bitwise complement operation (~), also called 1's complement)
+1. invert the bits by flipping 1s to 0s and 0s to 1s (the unary bitwise complement operation (`~`), also called 1's complement)
 2. then add 1 (ignoring the overflow)
 
 For example, using 1 byte (8 bits), the 2's complement of 5<sub>10</sub> = 0000 0101<sub>2</sub> is 1111 1011<sub>2</sub> = -5<sub>10</sub>:
