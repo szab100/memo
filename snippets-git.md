@@ -3,6 +3,10 @@
 git filter-branch -f --index-filter 'git ls-files -i --exclude-standard| xargs -r git rm --cached --ignore-unmatch -q' -- --all
 ```
 
+##### View Code Ownership (using git-blame)
+```
+git ls-files | while read f; do     git blame -w -M -C -C --line-porcelain "$f" |    grep -I '^author-mail '; done | cut -f2 -d'<' | cut -f1 -d'>' | sort -f | uniq -ic | sort -nr
+```
 
 ##### To view git log as a tree:
 
